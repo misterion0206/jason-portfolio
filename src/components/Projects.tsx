@@ -3,7 +3,7 @@ import { projects } from "../data/projects";
 export default function Projects() {
   return (
     <section id="projects" className="mx-auto max-w-6xl px-6 py-20">
-      <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-400">
+      <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600 dark:text-blue-400">
         Projects
       </p>
       <h2 className="mt-3 text-3xl font-bold">Featured Work</h2>
@@ -12,7 +12,7 @@ export default function Projects() {
         {projects.map((project) => (
           <div
             key={project.title}
-            className="flex h-full flex-col rounded-3xl border border-neutral-800 bg-neutral-900 p-6"
+            className="flex h-full flex-col rounded-3xl border border-neutral-200 bg-neutral-50 p-6 dark:border-neutral-800 dark:bg-neutral-900"
           >
             <div className="flex items-start justify-between gap-4">
               <h3 className="text-xl font-semibold">{project.title}</h3>
@@ -21,7 +21,7 @@ export default function Projects() {
               </span>
             </div>
 
-            <p className="mt-4 flex-1 leading-7 text-neutral-300">
+            <p className="mt-4 flex-1 leading-7 text-neutral-600 dark:text-neutral-300">
               {project.description}
             </p>
 
@@ -29,7 +29,7 @@ export default function Projects() {
               {project.tech.map((tech) => (
                 <span
                   key={tech}
-                  className="rounded-full border border-neutral-700 px-3 py-1 text-sm text-neutral-300"
+                  className="rounded-full border border-neutral-300 px-3 py-1 text-sm text-neutral-600 dark:border-neutral-700 dark:text-neutral-300"
                 >
                   {tech}
                 </span>
@@ -43,7 +43,7 @@ export default function Projects() {
                     href={project.github}
                     target="_blank"
                     rel="noreferrer"
-                    className="text-sm font-medium text-blue-400 transition hover:text-blue-300"
+                    className="text-sm font-medium text-blue-600 transition hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300"
                   >
                     View on GitHub →
                   </a>
@@ -53,7 +53,7 @@ export default function Projects() {
                     href={project.demo}
                     target="_blank"
                     rel="noreferrer"
-                    className="text-sm font-medium text-blue-400 transition hover:text-blue-300"
+                    className="text-sm font-medium text-blue-600 transition hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300"
                   >
                     Live Demo →
                   </a>
