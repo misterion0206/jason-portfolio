@@ -20,7 +20,7 @@ export default function Contact() {
             qaz12345tt99@gmail.com
           </a>
           <a
-            href="https://github.com/yochenChen"
+            href="https://github.com/misterion0206"
             target="_blank"
             rel="noreferrer"
             className="transition hover:text-blue-400"
