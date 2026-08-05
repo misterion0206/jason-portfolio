@@ -36,16 +36,28 @@ export default function Projects() {
               ))}
             </div>
 
-            {project.github && (
-              <div className="mt-6">
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-sm font-medium text-blue-400 transition hover:text-blue-300"
-                >
-                  View on GitHub →
-                </a>
+            {(project.github || project.demo) && (
+              <div className="mt-6 flex flex-wrap gap-4">
+                {project.github && (
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-sm font-medium text-blue-400 transition hover:text-blue-300"
+                  >
+                    View on GitHub →
+                  </a>
+                )}
+                {project.demo && (
+                  <a
+                    href={project.demo}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-sm font-medium text-blue-400 transition hover:text-blue-300"
+                  >
+                    Live Demo →
+                  </a>
+                )}
               </div>
             )}
           </div>
