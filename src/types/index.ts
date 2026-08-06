@@ -1,21 +1,25 @@
+export type Locale = "en" | "zh" | "es";
+
+export type LocalizedText = Record<Locale, string>;
+
 export type SkillCategory = {
-  title: string;
+  title: LocalizedText;
   items: string[];
 };
 
 export type ExperienceItem = {
   company: string;
-  role: string;
+  role: LocalizedText;
   period: string;
-  location: string;
+  location: LocalizedText;
   stack: string[];
-  highlights: string[];
+  highlights: LocalizedText[];
 };
 
 export type ProjectItem = {
   title: string;
   period: string;
-  description: string;
+  description: LocalizedText;
   tech: string[];
   github?: string;
   demo?: string;

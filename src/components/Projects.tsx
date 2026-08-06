@@ -1,12 +1,19 @@
+"use client";
+
 import { projects } from "../data/projects";
+import { useLanguage } from "./LanguageProvider";
+import { uiText } from "../i18n/ui";
 
 export default function Projects() {
+  const { locale } = useLanguage();
+  const t = uiText[locale].projects;
+
   return (
     <section id="projects" className="mx-auto max-w-6xl px-6 py-20">
       <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600 dark:text-blue-400">
-        Projects
+        {t.eyebrow}
       </p>
-      <h2 className="mt-3 text-3xl font-bold">Featured Work</h2>
+      <h2 className="mt-3 text-3xl font-bold">{t.heading}</h2>
 
       <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
         {projects.map((project) => (
@@ -22,7 +29,7 @@ export default function Projects() {
             </div>
 
             <p className="mt-4 flex-1 leading-7 text-neutral-600 dark:text-neutral-300">
-              {project.description}
+              {project.description[locale]}
             </p>
 
             <div className="mt-5 flex flex-wrap gap-2">
@@ -45,7 +52,7 @@ export default function Projects() {
                     rel="noreferrer"
                     className="text-sm font-medium text-blue-600 transition hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300"
                   >
-                    View on GitHub →
+                    {t.viewGithub}
                   </a>
                 )}
                 {project.demo && (
@@ -55,7 +62,7 @@ export default function Projects() {
                     rel="noreferrer"
                     className="text-sm font-medium text-blue-600 transition hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300"
                   >
-                    Live Demo →
+                    {t.liveDemo}
                   </a>
                 )}
                 {project.adminDemo && (
@@ -65,7 +72,7 @@ export default function Projects() {
                     rel="noreferrer"
                     className="text-sm font-medium text-blue-600 transition hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300"
                   >
-                    Admin Demo →
+                    {t.adminDemo}
                   </a>
                 )}
               </div>
@@ -74,7 +81,7 @@ export default function Projects() {
             {project.adminDemo && (
               <div className="mt-4 rounded-xl border border-neutral-300 bg-neutral-100 px-4 py-3 text-xs text-neutral-600 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-300">
                 <span className="font-semibold text-neutral-700 dark:text-neutral-200">
-                  Read-only admin demo:
+                  {t.readOnlyDemo}
                 </span>{" "}
                 <code>{project.adminDemo.username}</code> /{" "}
                 <code>{project.adminDemo.password}</code>

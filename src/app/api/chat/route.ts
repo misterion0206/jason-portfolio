@@ -2,7 +2,7 @@ import Anthropic from "@anthropic-ai/sdk";
 import type { MessageParam, ToolUnion } from "@anthropic-ai/sdk/resources/messages";
 import { Ratelimit } from "@upstash/ratelimit";
 import { Redis } from "@upstash/redis";
-import { SYSTEM_PROMPT } from "../../../lib/chatContext";
+import { SYSTEM_PROMPT, LANGUAGE_NAMES } from "../../../lib/chatContext";
 
 export const runtime = "nodejs";
 
@@ -124,17 +124,23 @@ export async function POST(req: Request) {
     return new Response("Invalid JSON", { status: 400 });
   }
 
-  const { messages } = body as { messages?: unknown };
+  const { messages, language } = body as { messages?: unknown; language?: unknown };
   if (!isValidMessages(messages)) {
     return new Response("Invalid messages", { status: 400 });
   }
+
+  const languageName =
+    typeof language === "string" && LANGUAGE_NAMES[language]
+      ? LANGUAGE_NAMES[language]
+      : LANGUAGE_NAMES.en;
+  const system = `${SYSTEM_PROMPT}\n\nAlways respond in ${languageName}, regardless of what language the visitor writes in.`;
 
   const trimmed = messages.slice(-MAX_MESSAGES) as MessageParam[];
 
   const stream = anthropic.messages.stream({
     model: "claude-opus-5",
     max_tokens: 1024,
-    system: SYSTEM_PROMPT,
+    system,
     output_config: { effort: "low" },
     tools,
     messages: trimmed,

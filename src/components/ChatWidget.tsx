@@ -3,15 +3,10 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTheme } from "next-themes";
+import { useLanguage } from "./LanguageProvider";
+import { uiText } from "../i18n/ui";
 import { RESUME_HREF } from "../data/resume";
 import { projects } from "../data/projects";
-
-const SUGGESTIONS = [
-  "Show me his projects",
-  "Open his resume",
-  "What are his skills?",
-  "How can I contact him?",
-];
 
 type Message = { role: "user" | "assistant"; content: string };
 
@@ -97,6 +92,8 @@ export default function ChatWidget() {
   const [cooldown, setCooldown] = useState(false);
   const listRef = useRef<HTMLDivElement>(null);
   const { resolvedTheme, setTheme } = useTheme();
+  const { locale } = useLanguage();
+  const t = uiText[locale].chat;
 
   const SEND_COOLDOWN_MS = 3000;
 
@@ -125,16 +122,13 @@ export default function ChatWidget() {
       const res = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ messages: nextMessages }),
+        body: JSON.stringify({ messages: nextMessages, language: locale }),
       });
 
       if (res.status === 429) {
         setMessages((prev) => {
           const updated = [...prev];
-          updated[updated.length - 1] = {
-            role: "assistant",
-            content: "You've reached the question limit for now — please try again a bit later.",
-          };
+          updated[updated.length - 1] = { role: "assistant", content: t.rateLimited };
           return updated;
         });
         return;
@@ -179,20 +173,14 @@ export default function ChatWidget() {
       if (!assistantText) {
         setMessages((prev) => {
           const updated = [...prev];
-          updated[updated.length - 1] = {
-            role: "assistant",
-            content: "Done — let me know if you have another question.",
-          };
+          updated[updated.length - 1] = { role: "assistant", content: t.done };
           return updated;
         });
       }
     } catch {
       setMessages((prev) => {
         const updated = [...prev];
-        updated[updated.length - 1] = {
-          role: "assistant",
-          content: "Something went wrong. Please try again in a moment.",
-        };
+        updated[updated.length - 1] = { role: "assistant", content: t.genericError };
         return updated;
       });
     } finally {
@@ -212,7 +200,7 @@ export default function ChatWidget() {
             className="mb-4 flex h-[28rem] w-80 flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-2xl dark:border-neutral-800 dark:bg-neutral-900"
           >
             <div className="flex items-center justify-between border-b border-neutral-200 bg-gradient-to-r from-blue-600 to-blue-500 px-4 py-3 text-white dark:border-neutral-800">
-              <span className="text-sm font-semibold">Ask about Jason</span>
+              <span className="text-sm font-semibold">{t.title}</span>
               <div className="flex items-center gap-1">
                 {mounted && (
                   <button
@@ -238,12 +226,9 @@ export default function ChatWidget() {
             <div ref={listRef} className="flex-1 space-y-3 overflow-y-auto px-4 py-3">
               {messages.length === 0 && (
                 <div className="space-y-3">
-                  <p className="text-sm text-neutral-500 dark:text-neutral-400">
-                    Ask me anything about Jason&apos;s experience, skills, or projects — I can
-                    also pull up the resume or jump to a section for you.
-                  </p>
+                  <p className="text-sm text-neutral-500 dark:text-neutral-400">{t.emptyState}</p>
                   <div className="flex flex-wrap gap-2">
-                    {SUGGESTIONS.map((s) => (
+                    {t.suggestions.map((s) => (
                       <button
                         key={s}
                         type="button"
@@ -278,7 +263,7 @@ export default function ChatWidget() {
               <input
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
-                placeholder="Type a question..."
+                placeholder={t.placeholder}
                 disabled={loading || cooldown}
                 maxLength={2000}
                 className="flex-1 rounded-xl border border-neutral-300 bg-transparent px-3 py-2 text-sm outline-none focus:border-blue-500 dark:border-neutral-700"
@@ -288,7 +273,7 @@ export default function ChatWidget() {
                 disabled={loading || cooldown || !input.trim()}
                 className="rounded-xl bg-blue-600 px-3 py-2 text-sm font-medium text-white transition hover:bg-blue-500 disabled:opacity-40"
               >
-                Send
+                {t.send}
               </button>
             </form>
           </motion.div>

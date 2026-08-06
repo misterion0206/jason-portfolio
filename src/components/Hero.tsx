@@ -3,9 +3,14 @@
 import { motion } from "framer-motion";
 import GithubStats from "./GithubStats";
 import Avatar from "./Avatar";
+import { useLanguage } from "./LanguageProvider";
+import { uiText } from "../i18n/ui";
 import { RESUME_HREF, RESUME_DOWNLOAD_NAME } from "../data/resume";
 
 export default function Hero() {
+  const { locale } = useLanguage();
+  const t = uiText[locale].hero;
+
   return (
     <section className="mx-auto flex min-h-[88vh] max-w-6xl items-center px-6 py-20">
       <motion.div
@@ -18,7 +23,7 @@ export default function Hero() {
 
         <div>
           <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-blue-600 dark:text-blue-400">
-            Software Engineer · Full-Stack · Cloud
+            {t.eyebrow}
           </p>
 
           <h1 className="text-4xl font-bold leading-tight sm:text-6xl">
@@ -26,10 +31,7 @@ export default function Hero() {
           </h1>
 
           <p className="mt-6 text-lg leading-8 text-neutral-600 sm:text-xl dark:text-neutral-300">
-            I build scalable systems end to end — from enterprise backends with
-            ASP.NET Core, Angular, SQL Server, and Azure DevOps, to full-stack
-            products with Next.js and React. My focus is practical software
-            that ships, scales, and improves how a business actually runs.
+            {t.description}
           </p>
 
           <div className="mt-8 flex flex-wrap gap-4">
@@ -37,7 +39,7 @@ export default function Hero() {
               href="#projects"
               className="rounded-2xl bg-neutral-900 px-6 py-3 font-medium text-white transition hover:bg-neutral-700 dark:bg-white dark:text-black dark:hover:bg-neutral-200"
             >
-              View Projects
+              {t.viewProjects}
             </a>
 
             <a
@@ -47,7 +49,7 @@ export default function Hero() {
               rel="noreferrer"
               className="rounded-2xl border border-neutral-300 px-6 py-3 font-medium text-neutral-900 transition hover:border-neutral-500 dark:border-neutral-700 dark:text-white dark:hover:border-neutral-400"
             >
-              Download Resume
+              {t.downloadResume}
             </a>
           </div>
 

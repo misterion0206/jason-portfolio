@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import ThemeProvider from "../components/ThemeProvider";
+import LanguageProvider from "../components/LanguageProvider";
 import ChatWidget from "../components/ChatWidget";
 import "./globals.css";
 
@@ -58,8 +59,10 @@ export default function RootLayout({
     <html lang="en" className={inter.variable} suppressHydrationWarning>
       <body>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          {children}
-          <ChatWidget />
+          <LanguageProvider>
+            {children}
+            <ChatWidget />
+          </LanguageProvider>
         </ThemeProvider>
         <Analytics />
       </body>

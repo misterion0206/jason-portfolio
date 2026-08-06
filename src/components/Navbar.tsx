@@ -2,17 +2,22 @@
 
 import { useState } from "react";
 import ThemeToggle from "./ThemeToggle";
-
-const navItems = [
-  { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
-  { label: "Experience", href: "#experience" },
-  { label: "Projects", href: "#projects" },
-  { label: "Contact", href: "#contact" },
-];
+import LanguageToggle from "./LanguageToggle";
+import { useLanguage } from "./LanguageProvider";
+import { uiText } from "../i18n/ui";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const { locale } = useLanguage();
+  const t = uiText[locale].nav;
+
+  const navItems = [
+    { label: t.about, href: "#about" },
+    { label: t.skills, href: "#skills" },
+    { label: t.experience, href: "#experience" },
+    { label: t.projects, href: "#projects" },
+    { label: t.contact, href: "#contact" },
+  ];
 
   return (
     <header className="sticky top-0 z-50 border-b border-neutral-200 bg-white/85 backdrop-blur dark:border-neutral-800 dark:bg-neutral-950/85">
@@ -34,6 +39,7 @@ export default function Navbar() {
             ))}
           </div>
 
+          <LanguageToggle />
           <ThemeToggle />
 
           <button

@@ -6,16 +6,16 @@ function buildSystemPrompt(): string {
   const experienceText = experiences
     .map(
       (job) =>
-        `- ${job.role} at ${job.company} (${job.period}, ${job.location}). Stack: ${job.stack.join(", ")}.\n  ${job.highlights.join(" ")}`
+        `- ${job.role.en} at ${job.company} (${job.period}, ${job.location.en}). Stack: ${job.stack.join(", ")}.\n  ${job.highlights.map((h) => h.en).join(" ")}`
     )
     .join("\n");
 
   const skillsText = skillCategories
-    .map((cat) => `- ${cat.title}: ${cat.items.join(", ")}`)
+    .map((cat) => `- ${cat.title.en}: ${cat.items.join(", ")}`)
     .join("\n");
 
   const projectsText = projects
-    .map((p) => `- ${p.title} (${p.period}): ${p.description} Tech: ${p.tech.join(", ")}.`)
+    .map((p) => `- ${p.title} (${p.period}): ${p.description.en} Tech: ${p.tech.join(", ")}.`)
     .join("\n");
 
   return `You are a friendly assistant embedded in Yu-Chien (Jason) Chen's portfolio website. You answer visitor questions about Jason's background, skills, work experience, and projects on his behalf, in first person plural ("Jason has experience with...", not "I have experience with...").
@@ -41,3 +41,9 @@ Visitors who want to get in touch should use the Contact section of this site (e
 }
 
 export const SYSTEM_PROMPT = buildSystemPrompt();
+
+export const LANGUAGE_NAMES: Record<string, string> = {
+  en: "English",
+  zh: "Traditional Chinese (繁體中文)",
+  es: "Spanish",
+};

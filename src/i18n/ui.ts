@@ -1,0 +1,160 @@
+import type { Locale } from "../types";
+
+export const localeNames: Record<Locale, string> = {
+  en: "English",
+  zh: "中文",
+  es: "Español",
+};
+
+export const uiText = {
+  en: {
+    nav: { about: "About", skills: "Skills", experience: "Experience", projects: "Projects", contact: "Contact" },
+    hero: {
+      eyebrow: "Software Engineer · Full-Stack · Cloud",
+      description:
+        "I build scalable systems end to end — from enterprise backends with ASP.NET Core, Angular, SQL Server, and Azure DevOps, to full-stack products with Next.js and React. My focus is practical software that ships, scales, and improves how a business actually runs.",
+      viewProjects: "View Projects",
+      downloadResume: "Download Resume",
+    },
+    about: {
+      eyebrow: "About",
+      heading: "Professional Summary",
+      p1: "I am a software engineer with experience building enterprise systems, ERP features, internal portals, and cloud-based business applications. My background combines backend development, system integration, and practical delivery for real business environments.",
+      p2: "I previously worked on ASP.NET Core, Angular, SQL Server, and Azure DevOps projects, including procurement systems, ERP modernization, and internal information platforms. More recently, I've been building full-stack products end to end with Next.js and React on the frontend. I enjoy building maintainable systems that connect engineering execution with business value.",
+      p3: "I am currently pursuing an M.S. in Computer Science at Stevens Institute of Technology, where I am continuing to strengthen my skills in software engineering, web development, and data-driven applications.",
+    },
+    skills: { eyebrow: "Skills", heading: "Technical Stack" },
+    experience: { eyebrow: "Experience", heading: "Professional Experience" },
+    projects: {
+      eyebrow: "Projects",
+      heading: "Featured Work",
+      viewGithub: "View on GitHub →",
+      liveDemo: "Live Demo →",
+      adminDemo: "Admin Demo →",
+      readOnlyDemo: "Read-only admin demo:",
+    },
+    contact: {
+      eyebrow: "Contact",
+      heading: "Let's Connect",
+      description:
+        "I am open to software engineering, backend, full-stack, and cloud-related opportunities. Feel free to reach out if you would like to connect, collaborate, or discuss a role.",
+      github: "GitHub",
+      resume: "Resume",
+    },
+    footer: { builtWith: "Built with Next.js, TypeScript, and Tailwind CSS" },
+    chat: {
+      title: "Ask about Jason",
+      emptyState:
+        "Ask me anything about Jason's experience, skills, or projects — I can also pull up the resume or jump to a section for you.",
+      placeholder: "Type a question...",
+      send: "Send",
+      rateLimited: "You've reached the question limit for now — please try again a bit later.",
+      genericError: "Something went wrong. Please try again in a moment.",
+      done: "Done — let me know if you have another question.",
+      suggestions: [
+        "Show me his projects",
+        "Open his resume",
+        "What are his skills?",
+        "How can I contact him?",
+      ],
+    },
+  },
+  zh: {
+    nav: { about: "關於我", skills: "技能", experience: "經歷", projects: "專案", contact: "聯絡" },
+    hero: {
+      eyebrow: "軟體工程師 · 全端開發 · 雲端服務",
+      description:
+        "我打造從前端到後端完整的可擴展系統 — 從使用 ASP.NET Core、Angular、SQL Server 和 Azure DevOps 的企業級後端,到使用 Next.js 與 React 的全端產品。我專注於能實際上線、能擴展、並真正改善企業營運方式的實用軟體。",
+      viewProjects: "查看專案",
+      downloadResume: "下載履歷",
+    },
+    about: {
+      eyebrow: "關於我",
+      heading: "專業簡介",
+      p1: "我是一名軟體工程師,擁有建置企業系統、ERP 功能、內部入口網站與雲端商業應用程式的經驗。我的背景結合了後端開發、系統整合,以及在真實商業環境中的實務交付。",
+      p2: "我先前參與過 ASP.NET Core、Angular、SQL Server 與 Azure DevOps 相關專案,包括採購系統、ERP 現代化改造與內部資訊平台。近期我也開始使用 Next.js 與 React 打造完整的全端產品。我熱衷於打造能連結工程執行與商業價值的可維護系統。",
+      p3: "我目前正在史蒂文斯理工學院(Stevens Institute of Technology)攻讀資訊科學碩士,持續強化我在軟體工程、網頁開發與資料驅動應用程式方面的能力。",
+    },
+    skills: { eyebrow: "技能", heading: "技術能力" },
+    experience: { eyebrow: "經歷", heading: "工作經歷" },
+    projects: {
+      eyebrow: "專案",
+      heading: "精選作品",
+      viewGithub: "查看 GitHub →",
+      liveDemo: "線上展示 →",
+      adminDemo: "後台展示 →",
+      readOnlyDemo: "唯讀後台展示帳號:",
+    },
+    contact: {
+      eyebrow: "聯絡",
+      heading: "與我聯繫",
+      description:
+        "我對軟體工程、後端、全端與雲端相關的機會都保持開放態度。歡迎與我聯繫、合作,或聊聊職缺機會。",
+      github: "GitHub",
+      resume: "履歷",
+    },
+    footer: { builtWith: "使用 Next.js、TypeScript 與 Tailwind CSS 打造" },
+    chat: {
+      title: "詢問 Jason 的相關資訊",
+      emptyState: "歡迎詢問任何關於 Jason 的經歷、技能或專案的問題 — 我也可以幫您開啟履歷或跳到特定區塊。",
+      placeholder: "輸入問題...",
+      send: "發送",
+      rateLimited: "您已達到目前的提問上限,請稍後再試。",
+      genericError: "發生錯誤,請稍後再試一次。",
+      done: "完成 — 還有其他問題嗎?",
+      suggestions: ["顯示他的專案", "開啟他的履歷", "他有哪些技能?", "如何聯絡他?"],
+    },
+  },
+  es: {
+    nav: { about: "Acerca de", skills: "Habilidades", experience: "Experiencia", projects: "Proyectos", contact: "Contacto" },
+    hero: {
+      eyebrow: "Ingeniero de Software · Full-Stack · Cloud",
+      description:
+        "Construyo sistemas escalables de principio a fin — desde backends empresariales con ASP.NET Core, Angular, SQL Server y Azure DevOps, hasta productos full-stack con Next.js y React. Me enfoco en software práctico que se lanza, escala y mejora la forma en que realmente opera un negocio.",
+      viewProjects: "Ver Proyectos",
+      downloadResume: "Descargar Currículum",
+    },
+    about: {
+      eyebrow: "Acerca de",
+      heading: "Resumen Profesional",
+      p1: "Soy un ingeniero de software con experiencia en la construcción de sistemas empresariales, funciones de ERP, portales internos y aplicaciones empresariales en la nube. Mi experiencia combina desarrollo backend, integración de sistemas y entrega práctica en entornos empresariales reales.",
+      p2: "Anteriormente trabajé en proyectos de ASP.NET Core, Angular, SQL Server y Azure DevOps, incluyendo sistemas de adquisiciones, modernización de ERP y plataformas de información internas. Más recientemente, he estado construyendo productos full-stack de principio a fin con Next.js y React en el frontend. Disfruto creando sistemas mantenibles que conectan la ejecución de ingeniería con el valor empresarial.",
+      p3: "Actualmente estoy cursando una Maestría en Ciencias de la Computación en Stevens Institute of Technology, donde continúo fortaleciendo mis habilidades en ingeniería de software, desarrollo web y aplicaciones basadas en datos.",
+    },
+    skills: { eyebrow: "Habilidades", heading: "Stack Técnico" },
+    experience: { eyebrow: "Experiencia", heading: "Experiencia Profesional" },
+    projects: {
+      eyebrow: "Proyectos",
+      heading: "Trabajo Destacado",
+      viewGithub: "Ver en GitHub →",
+      liveDemo: "Demo en Vivo →",
+      adminDemo: "Demo de Admin →",
+      readOnlyDemo: "Demo de admin de solo lectura:",
+    },
+    contact: {
+      eyebrow: "Contacto",
+      heading: "Conectemos",
+      description:
+        "Estoy abierto a oportunidades de ingeniería de software, backend, full-stack y relacionadas con la nube. No dudes en contactarme si deseas conectar, colaborar o conversar sobre un puesto.",
+      github: "GitHub",
+      resume: "Currículum",
+    },
+    footer: { builtWith: "Construido con Next.js, TypeScript y Tailwind CSS" },
+    chat: {
+      title: "Pregunta sobre Jason",
+      emptyState:
+        "Pregúntame lo que quieras sobre la experiencia, habilidades o proyectos de Jason — también puedo abrir el currículum o llevarte a una sección.",
+      placeholder: "Escribe una pregunta...",
+      send: "Enviar",
+      rateLimited: "Has alcanzado el límite de preguntas por ahora — inténtalo de nuevo más tarde.",
+      genericError: "Algo salió mal. Inténtalo de nuevo en un momento.",
+      done: "Listo — avísame si tienes otra pregunta.",
+      suggestions: [
+        "Muéstrame sus proyectos",
+        "Abrir su currículum",
+        "¿Cuáles son sus habilidades?",
+        "¿Cómo puedo contactarlo?",
+      ],
+    },
+  },
+} satisfies Record<Locale, unknown>;

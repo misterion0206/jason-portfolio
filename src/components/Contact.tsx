@@ -1,17 +1,22 @@
+"use client";
+
+import { useLanguage } from "./LanguageProvider";
+import { uiText } from "../i18n/ui";
 import { RESUME_HREF, RESUME_DOWNLOAD_NAME } from "../data/resume";
 
 export default function Contact() {
+  const { locale } = useLanguage();
+  const t = uiText[locale].contact;
+
   return (
     <section id="contact" className="mx-auto max-w-6xl px-6 py-20">
       <div className="rounded-3xl border border-neutral-200 bg-neutral-50 p-8 md:p-12 dark:border-neutral-800 dark:bg-neutral-900">
         <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600 dark:text-blue-400">
-          Contact
+          {t.eyebrow}
         </p>
-        <h2 className="mt-3 text-3xl font-bold">Let&apos;s Connect</h2>
+        <h2 className="mt-3 text-3xl font-bold">{t.heading}</h2>
         <p className="mt-4 max-w-2xl leading-8 text-neutral-600 dark:text-neutral-300">
-          I am open to software engineering, backend, full-stack, and cloud-related
-          opportunities. Feel free to reach out if you would like to connect,
-          collaborate, or discuss a role.
+          {t.description}
         </p>
 
         <div className="mt-8 flex flex-col gap-4 text-neutral-700 dark:text-neutral-200">
@@ -27,7 +32,7 @@ export default function Contact() {
             rel="noreferrer"
             className="transition hover:text-blue-600 dark:hover:text-blue-400"
           >
-            GitHub
+            {t.github}
           </a>
           <a
             href={RESUME_HREF}
@@ -36,7 +41,7 @@ export default function Contact() {
             rel="noreferrer"
             className="transition hover:text-blue-600 dark:hover:text-blue-400"
           >
-            Resume
+            {t.resume}
           </a>
         </div>
       </div>
