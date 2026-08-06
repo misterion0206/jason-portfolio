@@ -58,6 +58,26 @@ export default function Projects() {
                     Live Demo →
                   </a>
                 )}
+                {project.adminDemo && (
+                  <a
+                    href={project.adminDemo.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-sm font-medium text-blue-600 transition hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300"
+                  >
+                    Admin Demo →
+                  </a>
+                )}
+              </div>
+            )}
+
+            {project.adminDemo && (
+              <div className="mt-4 rounded-xl border border-neutral-300 bg-neutral-100 px-4 py-3 text-xs text-neutral-600 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-300">
+                <span className="font-semibold text-neutral-700 dark:text-neutral-200">
+                  Read-only admin demo:
+                </span>{" "}
+                <code>{project.adminDemo.username}</code> /{" "}
+                <code>{project.adminDemo.password}</code>
               </div>
             )}
           </div>

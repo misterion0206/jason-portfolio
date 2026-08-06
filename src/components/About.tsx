@@ -20,8 +20,10 @@ export default function About() {
           <p>
             I previously worked on ASP.NET Core, Angular, SQL Server, and Azure
             DevOps projects, including procurement systems, ERP modernization, and
-            internal information platforms. I enjoy building maintainable systems
-            that connect engineering execution with business value.
+            internal information platforms. More recently, I&apos;ve been building
+            full-stack products end to end with Next.js and React on the
+            frontend. I enjoy building maintainable systems that connect
+            engineering execution with business value.
           </p>
 
           <p>

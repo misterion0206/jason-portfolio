@@ -26,10 +26,10 @@ export default function Hero() {
           </h1>
 
           <p className="mt-6 text-lg leading-8 text-neutral-600 sm:text-xl dark:text-neutral-300">
-            I build scalable enterprise systems with ASP.NET Core, Angular, SQL
-            Server, and Azure DevOps. My focus is backend engineering, cloud
-            delivery, and practical software solutions that improve business
-            operations.
+            I build scalable systems end to end — from enterprise backends with
+            ASP.NET Core, Angular, SQL Server, and Azure DevOps, to full-stack
+            products with Next.js and React. My focus is practical software
+            that ships, scales, and improves how a business actually runs.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-4">
@@ -52,6 +52,12 @@ export default function Hero() {
           </div>
 
           <div className="mt-10 flex flex-wrap gap-3 text-sm text-neutral-500 dark:text-neutral-400">
+            <span className="rounded-full border border-neutral-200 px-3 py-1 dark:border-neutral-800">
+              Next.js
+            </span>
+            <span className="rounded-full border border-neutral-200 px-3 py-1 dark:border-neutral-800">
+              React
+            </span>
             <span className="rounded-full border border-neutral-200 px-3 py-1 dark:border-neutral-800">
               ASP.NET Core
             </span>

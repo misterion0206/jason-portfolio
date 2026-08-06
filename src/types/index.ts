@@ -19,4 +19,9 @@ export type ProjectItem = {
   tech: string[];
   github?: string;
   demo?: string;
+  adminDemo?: {
+    url: string;
+    username: string;
+    password: string;
+  };
 };

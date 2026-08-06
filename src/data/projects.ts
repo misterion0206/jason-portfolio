@@ -2,6 +2,28 @@ import type { ProjectItem } from "../types";
 
 export const projects: ProjectItem[] = [
   {
+    title: "Ecommerce Platform",
+    period: "Personal Project",
+    description:
+      "A full-stack e-commerce platform with a canvas-based product customization studio, shopping cart, Stripe checkout, membership system, and an operations admin dashboard. Storefront and admin apps are built with Next.js and React; the API runs on ASP.NET Core (.NET) with SQL Server and Azure Blob Storage, backed by CI/CD pipelines with E2E testing and staged Azure/Vercel deployments.",
+    tech: [
+      "Next.js",
+      "React",
+      "ASP.NET Core",
+      ".NET",
+      "SQL Server",
+      "Azure Blob Storage",
+      "Stripe",
+      "SignalR",
+    ],
+    demo: "https://ecommerce-platform-storefront-staging.vercel.app",
+    adminDemo: {
+      url: "https://ecommerce-platform-admin-staging.vercel.app",
+      username: "staging-demo",
+      password: "StagingDemo2026",
+    },
+  },
+  {
     title: "Full-Stack Web Application",
     period: "Dec 2025",
     description:
@@ -22,22 +44,5 @@ export const projects: ProjectItem[] = [
     description:
       "Enhanced a large ERP platform with multilingual support, performance optimization, and improved user accessibility.",
     tech: ["Angular", "ASP.NET Core", "Microsoft SQL Server"],
-  },
-  {
-    title: "Ecommerce Platform",
-    period: "Personal Project",
-    description:
-      "A full-stack e-commerce platform with a canvas-based product customization studio, shopping cart, Stripe checkout, membership system, and an operations admin dashboard. Storefront and admin apps are built with Next.js and React; the API runs on ASP.NET Core (.NET) with SQL Server and Azure Blob Storage, backed by CI/CD pipelines with E2E testing and staged Azure/Vercel deployments.",
-    tech: [
-      "Next.js",
-      "React",
-      "ASP.NET Core",
-      ".NET",
-      "SQL Server",
-      "Azure Blob Storage",
-      "Stripe",
-      "SignalR",
-    ],
-    demo: "https://ecommerce-platform-storefront-staging.vercel.app",
   },
 ];
