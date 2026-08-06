@@ -1,3 +1,5 @@
+import { RESUME_HREF, RESUME_DOWNLOAD_NAME } from "../data/resume";
+
 export default function Contact() {
   return (
     <section id="contact" className="mx-auto max-w-6xl px-6 py-20">
@@ -28,7 +30,8 @@ export default function Contact() {
             GitHub
           </a>
           <a
-            href="/resume.pdf"
+            href={RESUME_HREF}
+            download={RESUME_DOWNLOAD_NAME}
             target="_blank"
             rel="noreferrer"
             className="transition hover:text-blue-600 dark:hover:text-blue-400"

@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import GithubStats from "./GithubStats";
 import Avatar from "./Avatar";
+import { RESUME_HREF, RESUME_DOWNLOAD_NAME } from "../data/resume";
 
 export default function Hero() {
   return (
@@ -40,7 +41,8 @@ export default function Hero() {
             </a>
 
             <a
-              href="/resume.pdf"
+              href={RESUME_HREF}
+              download={RESUME_DOWNLOAD_NAME}
               target="_blank"
               rel="noreferrer"
               className="rounded-2xl border border-neutral-300 px-6 py-3 font-medium text-neutral-900 transition hover:border-neutral-500 dark:border-neutral-700 dark:text-white dark:hover:border-neutral-400"
