@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import ThemeProvider from "../components/ThemeProvider";
+import ChatWidget from "../components/ChatWidget";
 import "./globals.css";
 
 const inter = Inter({
@@ -58,6 +59,7 @@ export default function RootLayout({
       <body>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           {children}
+          <ChatWidget />
         </ThemeProvider>
         <Analytics />
       </body>
