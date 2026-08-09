@@ -12,7 +12,7 @@ const inter = Inter({
   display: "swap",
 });
 
-const siteUrl = "https://jason-portfolio-phi.vercel.app";
+const siteUrl = "https://www.jasonchen.website";
 const title = "Yu-Chien (Jason) Chen | Software Engineer";
 const description =
   "Portfolio of Yu-Chien (Jason) Chen - Software Engineer focused on backend, cloud, and enterprise systems.";
