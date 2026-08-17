@@ -51,6 +51,7 @@ function buildLlmsTxt(): string {
   lines.push("## Projects");
   for (const project of projects) {
     const links = [
+      project.slug ? `Case study: ${siteUrl}/projects/${project.slug}` : null,
       project.demo ? `Demo: ${project.demo}` : null,
       project.github ? `GitHub: ${project.github}` : null,
     ]

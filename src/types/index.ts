@@ -18,6 +18,7 @@ export type ExperienceItem = {
 
 export type ProjectItem = {
   title: string;
+  slug?: string;
   period: string;
   description: LocalizedText;
   tech: string[];

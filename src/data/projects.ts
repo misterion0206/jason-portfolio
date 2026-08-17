@@ -3,6 +3,7 @@ import type { ProjectItem } from "../types";
 export const projects: ProjectItem[] = [
   {
     title: "Ecommerce Platform",
+    slug: "ecommerce-platform",
     period: "Personal Project",
     description: {
       en: "A full-stack e-commerce platform with a canvas-based product customization studio, shopping cart, Stripe checkout, membership system, and an operations admin dashboard. Storefront and admin apps are built with Next.js and React; the API runs on ASP.NET Core (.NET) with SQL Server and Azure Blob Storage, backed by CI/CD pipelines with E2E testing and staged Azure/Vercel deployments.",

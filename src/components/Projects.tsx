@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { projects } from "../data/projects";
 import { useLanguage } from "./LanguageProvider";
 import { uiText } from "../i18n/ui";
@@ -27,6 +28,15 @@ export default function Projects() {
                 {project.period}
               </span>
             </div>
+
+            {project.slug && (
+              <Link
+                href={`/projects/${project.slug}`}
+                className="mt-2 text-sm font-medium text-blue-600 transition hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300"
+              >
+                {t.caseStudy}
+              </Link>
+            )}
 
             <p className="mt-4 flex-1 leading-7 text-neutral-600 dark:text-neutral-300">
               {project.description[locale]}
