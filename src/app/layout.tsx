@@ -4,6 +4,8 @@ import { Analytics } from "@vercel/analytics/next";
 import ThemeProvider from "../components/ThemeProvider";
 import LanguageProvider from "../components/LanguageProvider";
 import ChatWidget from "../components/ChatWidget";
+import { skillCategories } from "../data/skills";
+import { experiences } from "../data/experience";
 import "./globals.css";
 
 const inter = Inter({
@@ -50,6 +52,26 @@ export const metadata: Metadata = {
   },
 };
 
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Yu-Chien (Jason) Chen",
+  alternateName: "Jason Chen",
+  url: siteUrl,
+  image: `${siteUrl}/avatar-light.jpg`,
+  jobTitle: "Software Engineer",
+  email: "mailto:qaz12345tt99@gmail.com",
+  sameAs: ["https://github.com/misterion0206"],
+  knowsAbout: Array.from(new Set(skillCategories.flatMap((category) => category.items))),
+  alumniOf: [
+    ...experiences.map((experience) => ({
+      "@type": "Organization" as const,
+      name: experience.company,
+    })),
+    { "@type": "CollegeOrUniversity" as const, name: "Stevens Institute of Technology" },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -58,6 +80,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable} suppressHydrationWarning>
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <LanguageProvider>
             {children}
