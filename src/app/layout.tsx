@@ -17,7 +17,7 @@ const inter = Inter({
 const siteUrl = "https://www.jasonchen.website";
 const title = "Yu-Chien (Jason) Chen | Software Engineer";
 const description =
-  "Portfolio of Yu-Chien (Jason) Chen - Software Engineer focused on backend, cloud, and enterprise systems.";
+  "Software engineer specializing in ASP.NET Core, Angular, Azure, and full-stack development with Next.js and React. Portfolio featuring enterprise ERP systems and a full-stack e-commerce platform.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
