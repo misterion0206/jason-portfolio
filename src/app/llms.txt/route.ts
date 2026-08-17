@@ -18,7 +18,7 @@ function buildLlmsTxt(): string {
   );
   lines.push("");
   lines.push(
-    "I build scalable systems end to end — from enterprise backends with ASP.NET Core, Angular, SQL Server, and Azure DevOps, to full-stack products with Next.js and React. I am currently pursuing an M.S. in Computer Science at Stevens Institute of Technology and am open to software engineering, backend, full-stack, and cloud-related opportunities.",
+    "I build scalable systems end to end — from enterprise backends with ASP.NET Core, Angular, SQL Server, and Azure DevOps, to full-stack products with Next.js and React. I hold an M.S. in Computer Science from Stevens Institute of Technology and am open to software engineering, backend, full-stack, and cloud-related opportunities.",
   );
   lines.push("");
 
