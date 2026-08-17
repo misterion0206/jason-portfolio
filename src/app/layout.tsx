@@ -61,6 +61,7 @@ const personJsonLd = {
   image: `${siteUrl}/avatar-light.jpg`,
   jobTitle: "Software Engineer",
   email: "mailto:qaz12345tt99@gmail.com",
+  telephone: "+17342109691",
   sameAs: ["https://github.com/misterion0206"],
   knowsAbout: Array.from(new Set(skillCategories.flatMap((category) => category.items))),
   alumniOf: [

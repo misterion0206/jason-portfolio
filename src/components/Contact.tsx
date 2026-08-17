@@ -27,6 +27,12 @@ export default function Contact() {
             qaz12345tt99@gmail.com
           </a>
           <a
+            href="tel:+17342109691"
+            className="transition hover:text-blue-600 dark:hover:text-blue-400"
+          >
+            +1 734-210-9691
+          </a>
+          <a
             href="https://github.com/misterion0206"
             target="_blank"
             rel="noreferrer"

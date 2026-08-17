@@ -26,6 +26,7 @@ function buildLlmsTxt(): string {
   lines.push("- Name: Yu-Chien (Jason) Chen");
   lines.push("- Role: Software Engineer");
   lines.push("- Email: qaz12345tt99@gmail.com");
+  lines.push("- Phone: +1 734-210-9691");
   lines.push("- GitHub: https://github.com/misterion0206");
   lines.push(`- Resume (PDF): ${siteUrl}/resume.pdf`);
   lines.push(`- Website: ${siteUrl}`);
