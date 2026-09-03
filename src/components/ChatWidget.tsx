@@ -18,6 +18,16 @@ const LINKS: Record<string, string | undefined> = {
   admin_demo: ecommerceProject?.adminDemo?.url,
 };
 
+// Suggestion chips map 1:1 by index to the localized `chat.suggestions` lists
+// in i18n/ui.ts (projects, resume, skills, contact). Clicking a chip runs its
+// action immediately so it always scrolls/opens, without waiting on the model.
+const SUGGESTION_ACTIONS: { name: string; input: unknown }[] = [
+  { name: "scroll_to_section", input: { section: "projects" } },
+  { name: "open_link", input: { link: "resume" } },
+  { name: "scroll_to_section", input: { section: "skills" } },
+  { name: "scroll_to_section", input: { section: "contact" } },
+];
+
 function runAction(name: string, input: unknown) {
   if (name === "scroll_to_section") {
     const section = (input as { section?: string })?.section;
@@ -181,11 +191,15 @@ export default function ChatWidget() {
                 <div className="space-y-3">
                   <p className="text-sm text-neutral-500 dark:text-neutral-400">{t.emptyState}</p>
                   <div className="flex flex-wrap gap-2">
-                    {t.suggestions.map((s) => (
+                    {t.suggestions.map((s, i) => (
                       <button
                         key={s}
                         type="button"
-                        onClick={() => sendMessage(undefined, s)}
+                        onClick={() => {
+                          const action = SUGGESTION_ACTIONS[i];
+                          if (action) runAction(action.name, action.input);
+                          sendMessage(undefined, s);
+                        }}
                         disabled={loading || cooldown}
                         className="rounded-full border border-neutral-300 px-3 py-1.5 text-xs text-neutral-600 transition hover:border-blue-500 hover:text-blue-600 disabled:opacity-40 dark:border-neutral-700 dark:text-neutral-300 dark:hover:border-blue-400 dark:hover:text-blue-400"
                       >
