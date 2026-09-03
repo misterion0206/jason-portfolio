@@ -1,12 +1,15 @@
-import Anthropic from "@anthropic-ai/sdk";
-import type { MessageParam, ToolUnion } from "@anthropic-ai/sdk/resources/messages";
+import { GoogleGenAI, Type, ThinkingLevel } from "@google/genai";
+import type { Content, FunctionDeclaration } from "@google/genai";
 import { Ratelimit } from "@upstash/ratelimit";
 import { Redis } from "@upstash/redis";
 import { SYSTEM_PROMPT, LANGUAGE_NAMES } from "../../../lib/chatContext";
 
 export const runtime = "nodejs";
 
-const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+// Fixed to a Gemini API free-tier model. Do not fall back to a paid model.
+// (gemini-2.5-flash-lite is no longer served to new API keys; gemini-3.5-flash-lite
+// is its official free-tier successor.)
+const GEMINI_MODEL = "gemini-3.5-flash-lite";
 
 const ratelimit = new Ratelimit({
   redis: new Redis({
@@ -68,16 +71,18 @@ function isValidMessages(value: unknown): value is ChatMessage[] {
   );
 }
 
-const tools: ToolUnion[] = [
+// Gemini function declarations. Text generation + function calling only — no
+// Search/Maps grounding, code execution, image generation, or other paid tools.
+const functionDeclarations: FunctionDeclaration[] = [
   {
     name: "scroll_to_section",
     description:
       "Scroll the visitor's browser to a specific section of the portfolio page. Use this when it would help to show the visitor something relevant to their question, or when they ask to see a section.",
-    input_schema: {
-      type: "object",
+    parameters: {
+      type: Type.OBJECT,
       properties: {
         section: {
-          type: "string",
+          type: Type.STRING,
           enum: ["about", "skills", "experience", "projects", "contact"],
           description: "Which section of the page to scroll to.",
         },
@@ -89,11 +94,11 @@ const tools: ToolUnion[] = [
     name: "open_link",
     description:
       "Open a specific link in a new tab for the visitor. Use this when they ask to view, see, or download the resume, GitHub profile, or a project demo.",
-    input_schema: {
-      type: "object",
+    parameters: {
+      type: Type.OBJECT,
       properties: {
         link: {
-          type: "string",
+          type: Type.STRING,
           enum: ["resume", "github", "live_demo", "admin_demo"],
           description: "Which link to open.",
         },
@@ -129,22 +134,28 @@ export async function POST(req: Request) {
     return new Response("Invalid messages", { status: 400 });
   }
 
+  const apiKey = process.env.GEMINI_API_KEY;
+  if (!apiKey) {
+    // Log server-side only — never expose configuration details to the browser.
+    console.error("[chat] GEMINI_API_KEY is not configured");
+    return new Response("Server misconfiguration", { status: 500 });
+  }
+
   const languageName =
     typeof language === "string" && LANGUAGE_NAMES[language]
       ? LANGUAGE_NAMES[language]
       : LANGUAGE_NAMES.en;
-  const system = `${SYSTEM_PROMPT}\n\nAlways respond in ${languageName}, regardless of what language the visitor writes in.`;
+  const systemInstruction = `${SYSTEM_PROMPT}\n\nAlways respond in ${languageName}, regardless of what language the visitor writes in.`;
 
-  const trimmed = messages.slice(-MAX_MESSAGES) as MessageParam[];
+  // Only send the most recent messages, mapping client roles to Gemini roles
+  // (user -> user, assistant -> model).
+  const contents: Content[] = messages.slice(-MAX_MESSAGES).map((m) => ({
+    role: m.role === "assistant" ? "model" : "user",
+    parts: [{ text: m.content }],
+  }));
 
-  const stream = anthropic.messages.stream({
-    model: "claude-opus-5",
-    max_tokens: 1024,
-    system,
-    output_config: { effort: "low" },
-    tools,
-    messages: trimmed,
-  });
+  const ai = new GoogleGenAI({ apiKey });
+  const abortController = new AbortController();
 
   const encoder = new TextEncoder();
   const readable = new ReadableStream({
@@ -153,25 +164,45 @@ export async function POST(req: Request) {
         controller.enqueue(encoder.encode(JSON.stringify(event) + "\n"));
       };
 
-      stream.on("text", (delta) => {
-        send({ type: "text", text: delta });
-      });
-
       try {
-        const finalMessage = await stream.finalMessage();
-        for (const block of finalMessage.content) {
-          if (block.type === "tool_use") {
-            send({ type: "action", name: block.name, input: block.input });
+        const stream = await ai.models.generateContentStream({
+          model: GEMINI_MODEL,
+          contents,
+          config: {
+            systemInstruction,
+            maxOutputTokens: 1024,
+            // Keep reasoning cost minimal — this chatbot only needs text + function
+            // calling. (Gemini 3.x rejects thinkingBudget: 0; LOW is the floor that
+            // still reliably follows the "reply with text when calling a tool" rule.)
+            thinkingConfig: { thinkingLevel: ThinkingLevel.LOW },
+            tools: [{ functionDeclarations }],
+            abortSignal: abortController.signal,
+          },
+        });
+
+        const actions: { name: string; input: unknown }[] = [];
+
+        for await (const chunk of stream) {
+          const text = chunk.text;
+          if (text) send({ type: "text", text });
+
+          for (const call of chunk.functionCalls ?? []) {
+            if (call.name) actions.push({ name: call.name, input: call.args ?? {} });
           }
         }
+
+        for (const action of actions) {
+          send({ type: "action", name: action.name, input: action.input });
+        }
       } catch (err) {
-        send({ type: "error", message: (err as Error).message });
+        console.error("[chat] Gemini request failed:", err);
+        send({ type: "error", message: "The assistant is unavailable right now." });
       } finally {
         controller.close();
       }
     },
     cancel() {
-      stream.abort();
+      abortController.abort();
     },
   });
 
