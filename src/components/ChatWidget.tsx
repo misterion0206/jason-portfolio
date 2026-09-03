@@ -1,8 +1,7 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useTheme } from "next-themes";
 import { useLanguage } from "./LanguageProvider";
 import { uiText } from "../i18n/ui";
 import { RESUME_HREF } from "../data/resume";
@@ -54,52 +53,18 @@ function CloseIcon() {
   );
 }
 
-function SunIcon() {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4">
-      <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth={2} />
-      <path
-        d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"
-        stroke="currentColor"
-        strokeWidth={2}
-        strokeLinecap="round"
-      />
-    </svg>
-  );
-}
-
-function MoonIcon() {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4">
-      <path
-        d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"
-        stroke="currentColor"
-        strokeWidth={2}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
 export default function ChatWidget() {
   const [open, setOpen] = useState(false);
   const [hasOpened, setHasOpened] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
-  const [mounted, setMounted] = useState(false);
   const [cooldown, setCooldown] = useState(false);
   const listRef = useRef<HTMLDivElement>(null);
-  const { resolvedTheme, setTheme } = useTheme();
   const { locale } = useLanguage();
   const t = uiText[locale].chat;
 
   const SEND_COOLDOWN_MS = 3000;
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   function toggle() {
     setOpen((v) => !v);
@@ -201,26 +166,14 @@ export default function ChatWidget() {
           >
             <div className="flex items-center justify-between border-b border-neutral-200 bg-gradient-to-r from-blue-600 to-blue-500 px-4 py-3 text-white dark:border-neutral-800">
               <span className="text-sm font-semibold">{t.title}</span>
-              <div className="flex items-center gap-1">
-                {mounted && (
-                  <button
-                    type="button"
-                    onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
-                    aria-label="Toggle light/dark mode"
-                    className="rounded-full p-1.5 text-white/80 transition hover:bg-white/10 hover:text-white"
-                  >
-                    {resolvedTheme === "dark" ? <SunIcon /> : <MoonIcon />}
-                  </button>
-                )}
-                <button
-                  type="button"
-                  onClick={() => setOpen(false)}
-                  aria-label="Close chat"
-                  className="rounded-full p-1.5 text-white/80 transition hover:bg-white/10 hover:text-white"
-                >
-                  <CloseIcon />
-                </button>
-              </div>
+              <button
+                type="button"
+                onClick={() => setOpen(false)}
+                aria-label="Close chat"
+                className="rounded-full p-1.5 text-white/80 transition hover:bg-white/10 hover:text-white"
+              >
+                <CloseIcon />
+              </button>
             </div>
 
             <div ref={listRef} className="flex-1 space-y-3 overflow-y-auto px-4 py-3">
