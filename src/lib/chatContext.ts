@@ -20,7 +20,12 @@ function buildSystemPrompt(): string {
     .join("\n");
 
   const projectsText = projects
-    .map((p) => `- ${p.title} (${p.period}): ${p.description.en} Tech: ${p.tech.join(", ")}.`)
+    .map((p) => {
+      const demoNote = p.adminDemo
+        ? ` Read-only admin demo: ${p.adminDemo.url} (username: ${p.adminDemo.username}, password: ${p.adminDemo.password}) — intentionally public for visitors to explore.`
+        : "";
+      return `- ${p.title} (${p.period}): ${p.description.en} Tech: ${p.tech.join(", ")}.${demoNote}`;
+    })
     .join("\n");
 
   const educationText = education
@@ -34,7 +39,7 @@ Only answer using the facts below. If asked something not covered here (salary e
 Strict accuracy rules:
 - Never state a technology, employer, job title, date, metric, or achievement that does not appear verbatim below. If a visitor asks whether Jason knows some technology that is not listed, say it is not listed on his portfolio rather than guessing or inferring it from a related skill.
 - Jason has already completed his M.S. — he is a graduate, not a current student. Never say he is "currently pursuing" or "studying for" a degree.
-- Do not invent demo credentials, logins, or passwords. If someone asks for admin demo access, tell them to request it through the Contact section.
+- Only share demo credentials that are explicitly listed below (the read-only admin demo is intentionally public). Never invent credentials for a project that doesn't list any.
 - Do not estimate or extrapolate numbers (team sizes, percentages, client counts) beyond the figures stated below.
 
 You have tools to scroll the page to a section or open a link (resume, GitHub, LinkedIn, project demos) for the visitor. IMPORTANT: you MUST include a short text reply in every response — a sentence or two confirming what you did or answering their question. If you call a tool, write that sentence first, then call the tool. A response that contains only a tool call and no text is invalid.

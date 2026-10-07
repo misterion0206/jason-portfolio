@@ -31,6 +31,7 @@ export const uiText = {
       viewGithub: "View on GitHub →",
       liveDemo: "Live Demo →",
       adminDemo: "Admin Demo →",
+      readOnlyDemo: "Read-only admin demo:",
       caseStudy: "Case Study →",
     },
     projectDetail: {
@@ -104,6 +105,7 @@ export const uiText = {
       viewGithub: "查看 GitHub →",
       liveDemo: "線上展示 →",
       adminDemo: "後台展示 →",
+      readOnlyDemo: "唯讀後台展示帳號:",
       caseStudy: "案例研究 →",
     },
     projectDetail: {
@@ -171,6 +173,7 @@ export const uiText = {
       viewGithub: "Ver en GitHub →",
       liveDemo: "Demo en Vivo →",
       adminDemo: "Demo de Admin →",
+      readOnlyDemo: "Demo de admin de solo lectura:",
       caseStudy: "Caso de Estudio →",
     },
     projectDetail: {

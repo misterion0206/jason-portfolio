@@ -87,6 +87,16 @@ export default function Projects() {
                 )}
               </div>
             )}
+
+            {project.adminDemo && (
+              <div className="mt-4 rounded-xl border border-neutral-300 bg-neutral-100 px-4 py-3 text-xs text-neutral-600 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-300">
+                <span className="font-semibold text-neutral-700 dark:text-neutral-200">
+                  {t.readOnlyDemo}
+                </span>{" "}
+                <code>{project.adminDemo.username}</code> /{" "}
+                <code>{project.adminDemo.password}</code>
+              </div>
+            )}
           </div>
         ))}
       </div>

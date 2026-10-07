@@ -27,11 +27,13 @@ export type ProjectItem = {
   github?: string;
   demo?: string;
   /**
-   * Admin demo link only. Credentials are deliberately NOT part of this type —
-   * this repository is public, so anything stored here is published. Access is
-   * arranged on request instead.
+   * Read-only admin demo. Intentionally public — these credentials gate a
+   * seeded staging account meant for recruiters/visitors to explore, not a
+   * secret. Confirmed non-sensitive by the project owner.
    */
   adminDemo?: {
     url: string;
+    username: string;
+    password: string;
   };
 };

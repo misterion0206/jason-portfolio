@@ -33,9 +33,11 @@ export const projects: ProjectItem[] = [
       "Vercel",
     ],
     demo: "https://ecommerce-platform-storefront-staging.vercel.app",
-    // Link only. Demo credentials are never committed to this public repo.
+    // Intentionally public read-only demo account — confirmed by the project owner.
     adminDemo: {
       url: "https://ecommerce-platform-admin-staging.vercel.app",
+      username: "staging-demo",
+      password: "StagingDemo2026",
     },
   },
   {
