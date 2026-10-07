@@ -1,8 +1,10 @@
 import type { ExperienceItem } from "../types";
 
+// Bullets here mirror resume/resume.html so the site, the PDF, llms.txt, and the
+// chatbot never disagree. Technology names stay in English in every locale.
 export const experiences: ExperienceItem[] = [
   {
-    company: "Chengli Innovation Co., Ltd.",
+    company: "Chenglin Innovation Co., Ltd.",
     role: {
       en: "Software Development Engineer",
       zh: "軟體開發工程師",
@@ -17,38 +19,38 @@ export const experiences: ExperienceItem[] = [
     stack: ["ASP.NET Core MVC", "Angular", "SQL Server", "Azure DevOps"],
     highlights: [
       {
-        en: "Led a team of 5 engineers to deliver a cloud-based procurement notification system for Taipei 101 within 2 months.",
-        zh: "帶領 5 人工程團隊,於 2 個月內為台北 101 交付雲端採購通知系統。",
-        es: "Lideré un equipo de 5 ingenieros para entregar un sistema de notificación de adquisiciones basado en la nube para el Taipei 101 en 2 meses.",
+        en: "Led a five-person engineering team to deliver a procurement notification platform for Taipei 101 in two months using ASP.NET Core MVC and SQL Server, improving cross-team communication efficiency by 30%.",
+        zh: "帶領 5 人工程團隊,以 ASP.NET Core MVC 與 SQL Server 於 2 個月內為台北 101 交付採購通知平台,將跨部門溝通效率提升 30%。",
+        es: "Lideré un equipo de cinco ingenieros para entregar una plataforma de notificación de adquisiciones para el Taipei 101 en dos meses con ASP.NET Core MVC y SQL Server, mejorando la eficiencia de comunicación entre equipos en un 30%.",
       },
       {
-        en: "Improved communication efficiency by 30% through workflow redesign and backend system integration.",
-        zh: "透過工作流程重新設計與後端系統整合,將溝通效率提升 30%。",
-        es: "Mejoré la eficiencia de comunicación en un 30% mediante el rediseño de flujos de trabajo e integración de sistemas backend.",
+        en: "Developed tender and bidding workflows, role-based menu access, and API integrations with the client's internal systems.",
+        zh: "開發招標與投標流程、角色權限選單控管,並與客戶內部系統進行 API 整合。",
+        es: "Desarrollé flujos de licitación y ofertas, acceso a menús basado en roles e integraciones de API con los sistemas internos del cliente.",
       },
       {
-        en: "Revamped a large-scale ERP system with multilingual support and improved page load performance by 25%.",
-        zh: "翻新大型 ERP 系統並加入多語系支援,將頁面載入效能提升 25%。",
-        es: "Renové un sistema ERP a gran escala con soporte multilingüe y mejoré el rendimiento de carga de página en un 25%.",
+        en: "Modernized an ERP application using Angular, ASP.NET Core, and SQL Server, adding multilingual support and reducing page-load time by 25%.",
+        zh: "以 Angular、ASP.NET Core 與 SQL Server 現代化 ERP 應用程式,加入多語系支援並將頁面載入時間縮短 25%。",
+        es: "Modernicé una aplicación ERP con Angular, ASP.NET Core y SQL Server, añadiendo soporte multilingüe y reduciendo el tiempo de carga de página en un 25%.",
       },
       {
-        en: "Built a corporate information portal with real-time progress visualization to support cost and revenue analysis.",
-        zh: "建置企業資訊入口網站,以即時進度視覺化協助成本與營收分析。",
-        es: "Construí un portal de información corporativa con visualización de progreso en tiempo real para respaldar el análisis de costos e ingresos.",
+        en: "Built a corporate information portal for project, cost, and revenue tracking.",
+        zh: "建置企業資訊入口網站,用於專案、成本與營收追蹤。",
+        es: "Construí un portal de información corporativa para el seguimiento de proyectos, costos e ingresos.",
       },
       {
-        en: "Introduced Azure DevOps CI/CD pipelines, accelerating development and deployment cycles by 40%.",
-        zh: "導入 Azure DevOps CI/CD 流水線,將開發與部署週期加快 40%。",
-        es: "Introduje pipelines de CI/CD en Azure DevOps, acelerando los ciclos de desarrollo e implementación en un 40%.",
+        en: "Introduced Azure DevOps CI/CD pipelines, reducing release-cycle time by 40%.",
+        zh: "導入 Azure DevOps CI/CD 流水線,將發佈週期縮短 40%。",
+        es: "Introduje pipelines de CI/CD en Azure DevOps, reduciendo el tiempo del ciclo de lanzamiento en un 40%.",
       },
     ],
   },
   {
     company: "Digihua Intelligent Systems Co., Ltd.",
     role: {
-      en: "Development / Technical R&D Engineer",
-      zh: "開發 / 技術研發工程師",
-      es: "Ingeniero de Desarrollo / I+D Técnico",
+      en: "Technical R&D Engineer",
+      zh: "技術研發工程師",
+      es: "Ingeniero de I+D Técnico",
     },
     period: "Dec 2020 - Mar 2022",
     location: {
@@ -56,27 +58,27 @@ export const experiences: ExperienceItem[] = [
       zh: "台灣,台中",
       es: "Taichung, Taiwán",
     },
-    stack: ["C#", "WinForms", "SQL", "DevExpress", "NPOI"],
+    stack: ["C#", "WinForms", "SQL Server", "DevExpress", "NPOI"],
     highlights: [
       {
-        en: "Developed multilingual import/export modules supporting 5+ languages for ERP environments.",
-        zh: "開發支援 5 種以上語言的 ERP 系統多語系匯入/匯出模組。",
-        es: "Desarrollé módulos de importación/exportación multilingües compatibles con más de 5 idiomas para entornos ERP.",
+        en: "Built multilingual import/export modules using C#, WinForms, and SQL, supporting more than five languages and improving operational efficiency by 40%.",
+        zh: "以 C#、WinForms 與 SQL 建置多語系匯入/匯出模組,支援 5 種以上語言,並將營運效率提升 40%。",
+        es: "Construí módulos de importación/exportación multilingües con C#, WinForms y SQL, compatibles con más de cinco idiomas y mejorando la eficiencia operativa en un 40%.",
       },
       {
-        en: "Implemented 10+ customized ERP features including data validation, report syntax verification, and import automation.",
-        zh: "實作超過 10 項客製化 ERP 功能,包含資料驗證、報表語法檢查與匯入自動化。",
-        es: "Implementé más de 10 funciones ERP personalizadas, incluyendo validación de datos, verificación de sintaxis de informes y automatización de importación.",
+        en: "Delivered more than ten customized workflow, validation, reporting, and import features using DevExpress and NPOI.",
+        zh: "使用 DevExpress 與 NPOI 交付超過 10 項客製化的流程、驗證、報表與匯入功能。",
+        es: "Entregué más de diez funciones personalizadas de flujo de trabajo, validación, informes e importación usando DevExpress y NPOI.",
       },
       {
-        en: "Deployed and customized APS systems for 5+ enterprise clients with complex data integration needs.",
-        zh: "為 5 家以上企業客戶部署並客製化 APS 系統,滿足複雜的資料整合需求。",
-        es: "Implementé y personalicé sistemas APS para más de 5 clientes empresariales con necesidades complejas de integración de datos.",
+        en: "Deployed APS solutions for more than five enterprise clients and supported customized requirements and integrations for more than fifteen clients.",
+        zh: "為 5 家以上企業客戶部署 APS 解決方案,並為 15 家以上客戶支援客製化需求與系統整合。",
+        es: "Implementé soluciones APS para más de cinco clientes empresariales y atendí requisitos personalizados e integraciones para más de quince clientes.",
       },
       {
-        en: "Collaborated with cross-regional stakeholders and presented technical solutions to management.",
-        zh: "與跨地區利害關係人協作,並向管理層簡報技術解決方案。",
-        es: "Colaboré con partes interesadas de distintas regiones y presenté soluciones técnicas a la dirección.",
+        en: "Collaborated with a cross-regional team of more than ten members and presented technical solutions to executive stakeholders.",
+        zh: "與超過 10 人的跨地區團隊協作,並向高階主管簡報技術解決方案。",
+        es: "Colaboré con un equipo interregional de más de diez miembros y presenté soluciones técnicas a directivos.",
       },
     ],
   },

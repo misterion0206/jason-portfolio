@@ -93,13 +93,13 @@ const functionDeclarations: FunctionDeclaration[] = [
   {
     name: "open_link",
     description:
-      "Open a specific link in a new tab for the visitor. Use this when they ask to view, see, or download the resume, GitHub profile, or a project demo.",
+      "Open a specific link in a new tab for the visitor. Use this when they ask to view, see, or download the resume, GitHub profile, LinkedIn profile, or a project demo.",
     parameters: {
       type: Type.OBJECT,
       properties: {
         link: {
           type: Type.STRING,
-          enum: ["resume", "github", "live_demo", "admin_demo"],
+          enum: ["resume", "github", "linkedin", "live_demo", "admin_demo"],
           description: "Which link to open.",
         },
       },

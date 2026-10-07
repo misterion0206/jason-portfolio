@@ -17,6 +17,8 @@ export type ExperienceItem = {
 };
 
 export type ProjectItem = {
+  /** Stable identifier used for lookups; `title` is display copy and may change. */
+  id: string;
   title: string;
   slug?: string;
   period: string;
@@ -24,9 +26,12 @@ export type ProjectItem = {
   tech: string[];
   github?: string;
   demo?: string;
+  /**
+   * Admin demo link only. Credentials are deliberately NOT part of this type —
+   * this repository is public, so anything stored here is published. Access is
+   * arranged on request instead.
+   */
   adminDemo?: {
     url: string;
-    username: string;
-    password: string;
   };
 };

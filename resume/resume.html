@@ -1,0 +1,322 @@
+<!doctype html>
+<!--
+  Maintainable source for public/resume.pdf.
+
+  Regenerate with:  npm run resume:build
+  See resume/README.md for the full procedure and verification checklist.
+
+  Double-brace placeholders are substituted by scripts/build-resume.mjs from
+  src/data/profile.ts — never hardcode the email, phone, or links here.
+
+  ATS constraints this file must keep satisfying:
+    - single column, no tables / sidebars / headshots / icons / skill bars
+    - body text at 10pt or larger
+    - text extractable in natural reading order
+    - every link visible as a short URL as well as clickable
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <!-- Becomes the PDF metadata title (/Title) via Chrome's print-to-PDF. -->
+    <title>{{metaTitle}}</title>
+    <style>
+      @page {
+        size: letter;
+        margin: 0.42in 0.5in;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        /* 10pt body text. Everything else is sized relative to this. */
+        font-size: 10pt;
+      }
+
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1rem;
+        line-height: 1.2;
+        color: #000;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      a {
+        color: #00309e;
+        text-decoration: none;
+      }
+
+      /* ---------- Header ---------- */
+
+      .name {
+        font-size: 2rem;
+        font-weight: bold;
+        letter-spacing: 0.02em;
+        text-align: center;
+        line-height: 1.1;
+      }
+
+      .positioning {
+        margin-top: 0.14rem;
+        font-size: 1.1rem;
+        font-weight: bold;
+        letter-spacing: 0.04em;
+        text-align: center;
+        color: #1a1a1a;
+      }
+
+      .contact {
+        margin-top: 0.3rem;
+        text-align: center;
+        line-height: 1.4;
+      }
+
+      .contact .sep {
+        color: #555;
+        padding: 0 0.22rem;
+      }
+
+      .summary {
+        margin-top: 0.45rem;
+      }
+
+      /* ---------- Sections ---------- */
+
+      /* No letter-spacing on headings: Chrome emits per-glyph positioning for
+         tracked-out text, which makes extractors read "EDUCATION" as
+         "E D U C AT I O N" and breaks ATS keyword matching. */
+      h2 {
+        margin-top: 0.5rem;
+        padding-bottom: 0.06rem;
+        border-bottom: 0.9pt solid #000;
+        font-size: 1.05rem;
+        font-weight: bold;
+      }
+
+      .entry {
+        margin-top: 0.3rem;
+      }
+
+      /* Two text runs on one baseline: left label, right date. Flex keeps DOM
+         order (= extraction order) while still right-aligning the dates. */
+      .row {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 0.5rem;
+      }
+
+      .row .date {
+        flex: none;
+        white-space: nowrap;
+        font-size: 0.96rem;
+        color: #1a1a1a;
+      }
+
+      .org {
+        font-weight: bold;
+      }
+
+      .role {
+        font-style: italic;
+      }
+
+      ul {
+        margin-top: 0.1rem;
+        padding-left: 1.05rem;
+      }
+
+      li {
+        margin-top: 0.09rem;
+      }
+
+      /* ---------- Skills ---------- */
+
+      .skills p {
+        margin-top: 0.14rem;
+        padding-left: 0;
+        text-indent: 0;
+      }
+
+      .skills .label {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="name">{{nameUpper}}</div>
+      <div class="positioning">{{titleUpper}}</div>
+
+      <div class="contact">
+        <div>
+          {{location}}<span class="sep">|</span><a href="mailto:{{email}}">{{email}}</a
+          ><span class="sep">|</span>{{phoneDisplay}}
+        </div>
+        <div>
+          <a href="{{siteUrl}}">{{siteDisplay}}</a><span class="sep">|</span
+          ><a href="{{linkedinUrl}}">{{linkedinDisplay}}</a><span class="sep">|</span
+          ><a href="{{githubUrl}}">{{githubDisplay}}</a>
+        </div>
+      </div>
+
+      <p class="summary">{{summary}}</p>
+    </header>
+
+    <h2>EDUCATION</h2>
+
+    <div class="entry">
+      <div class="row">
+        <div>
+          <span class="org">Stevens Institute of Technology</span>, Hoboken, NJ - M.S. in
+          Computer Science
+        </div>
+        <div class="date">May 2026</div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="row">
+        <div>
+          <span class="org">National Chung Cheng University</span>, Chiayi, Taiwan - B.S. in
+          Mathematics
+        </div>
+        <div class="date">May 2019</div>
+      </div>
+    </div>
+
+    <h2>PROFESSIONAL EXPERIENCE</h2>
+
+    <div class="entry">
+      <div class="row">
+        <div><span class="org">Chenglin Innovation Co., Ltd.</span>, Taipei, Taiwan</div>
+        <div class="date">Nov 2022 - Aug 2024</div>
+      </div>
+      <div class="role">Software Development Engineer</div>
+      <ul>
+        <li>
+          Led a five-person engineering team to deliver a procurement notification platform for
+          Taipei 101 in two months using ASP.NET Core MVC and SQL Server, improving cross-team
+          communication efficiency by 30%.
+        </li>
+        <li>
+          Developed tender and bidding workflows, role-based menu access, and API integrations with
+          the client's internal systems.
+        </li>
+        <li>
+          Modernized an ERP application using Angular, ASP.NET Core, and SQL Server, adding
+          multilingual support and reducing page-load time by 25%.
+        </li>
+        <li>Built a corporate information portal for project, cost, and revenue tracking.</li>
+        <li>Introduced Azure DevOps CI/CD pipelines, reducing release-cycle time by 40%.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="row">
+        <div><span class="org">Digihua Intelligent Systems Co., Ltd.</span>, Taichung, Taiwan</div>
+        <div class="date">Dec 2020 - Mar 2022</div>
+      </div>
+      <div class="role">Technical R&amp;D Engineer</div>
+      <ul>
+        <li>
+          Built multilingual import/export modules using C#, WinForms, and SQL, supporting more than
+          five languages and improving operational efficiency by 40%.
+        </li>
+        <li>
+          Delivered more than ten customized workflow, validation, reporting, and import features
+          using DevExpress and NPOI.
+        </li>
+        <li>
+          Deployed APS solutions for more than five enterprise clients and supported customized
+          requirements and integrations for more than fifteen clients.
+        </li>
+        <li>
+          Collaborated with a cross-regional team of more than ten members and presented technical
+          solutions to executive stakeholders.
+        </li>
+      </ul>
+    </div>
+
+    <!--
+      The "Institute for Information Industry" training entry (Aug-Dec 2020) was
+      dropped to hold one page. It costs ~53pt; only ~20pt is available from
+      spacing, and reclaiming the rest would mean cutting approved bullet
+      wording. The two professional roles already cover 38 months, which carries
+      the "3+ years" claim in the summary on their own. To restore it, trim three
+      wrapped lines elsewhere first — the build fails if the PDF spills to page 2.
+    -->
+
+    <h2>PROJECTS</h2>
+
+    <div class="entry">
+      <div class="row">
+        <div><span class="org">Product Creation &amp; E-Commerce Platform</span></div>
+        <div class="date">2026 - Present</div>
+      </div>
+      <ul>
+        <li>
+          Built Next.js/React storefront and administration applications on an ASP.NET Core Web API
+          with Entity Framework Core, Azure SQL, and Azure Blob Storage.
+        </li>
+        <li>
+          Implemented a Konva/react-konva customization studio with saved designs, cart, Stripe
+          checkout, and order workflows, secured by JWT authentication with refresh tokens and
+          role-based authorization.
+        </li>
+        <li>
+          Automated delivery with GitHub Actions CI/CD and Playwright end-to-end tests, deploying
+          through staging and production controls to Azure App Service and Vercel.
+        </li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="row">
+        <div><span class="org">AI-Powered Portfolio</span></div>
+        <div class="date">2026</div>
+      </div>
+      <ul>
+        <li>
+          Built and deployed a multilingual portfolio using Next.js, React, TypeScript, and Tailwind
+          CSS with English, Traditional Chinese, and Spanish support.
+        </li>
+        <li>
+          Integrated the Google Gemini API with function calling and typed portfolio data so
+          visitors can explore experience, projects, resume links, and page sections.
+        </li>
+        <li>
+          Protected the public chat endpoint with same-origin validation and Upstash Redis
+          sliding-window rate limiting.
+        </li>
+      </ul>
+    </div>
+
+    <h2>TECHNICAL SKILLS</h2>
+
+    <div class="entry skills">
+      <p><span class="label">Languages:</span> C#, TypeScript, JavaScript, SQL, Java</p>
+      <p>
+        <span class="label">Backend:</span> .NET, ASP.NET Core, Entity Framework Core, REST APIs,
+        JWT, Swagger/OpenAPI
+      </p>
+      <p>
+        <span class="label">Frontend:</span> React, Next.js, Angular, Tailwind CSS,
+        Konva/react-konva
+      </p>
+      <p>
+        <span class="label">Cloud &amp; DevOps:</span> Azure App Service, Azure SQL, Azure Blob
+        Storage, Azure DevOps, GitHub Actions, Vercel, CI/CD
+      </p>
+      <p><span class="label">Databases:</span> SQL Server, Redis</p>
+      <p><span class="label">Testing &amp; Tools:</span> Git, Playwright, xUnit</p>
+      <p>
+        <span class="label">Integrations:</span> Stripe, Google Gemini API, function calling
+      </p>
+    </div>
+  </body>
+</html>
