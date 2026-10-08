@@ -1,4 +1,5 @@
 import { ImageResponse } from "next/og";
+import { profile } from "../data/profile";
 
 export const size = {
   width: 1200,
@@ -31,13 +32,11 @@ export default function OpengraphImage() {
             color: "#60a5fa",
           }}
         >
-          Software Engineer · Full-Stack · Cloud
+          .NET Full-Stack Software Engineer
         </div>
-        <div style={{ fontSize: 72, fontWeight: 700, marginTop: 24 }}>
-          Yu-Chien (Jason) Chen
-        </div>
+        <div style={{ fontSize: 72, fontWeight: 700, marginTop: 24 }}>{profile.fullName}</div>
         <div style={{ fontSize: 32, color: "#a3a3a3", marginTop: 24 }}>
-          ASP.NET Core · Angular · Next.js · Azure DevOps
+          C# · ASP.NET Core · React · Next.js · SQL Server · Azure
         </div>
       </div>
     ),

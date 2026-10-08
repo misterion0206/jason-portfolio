@@ -6,6 +6,20 @@ import Avatar from "./Avatar";
 import { useLanguage } from "./LanguageProvider";
 import { uiText } from "../i18n/ui";
 import { RESUME_HREF, RESUME_DOWNLOAD_NAME } from "../data/resume";
+import { profile } from "../data/profile";
+
+// Lead with the .NET stack so the first impression matches the resume's
+// ".NET Full-Stack Software Engineer" positioning.
+const HERO_TAGS = [
+  "C#",
+  ".NET",
+  "ASP.NET Core",
+  "React",
+  "Next.js",
+  "Angular",
+  "SQL Server",
+  "Azure",
+];
 
 export default function Hero() {
   const { locale } = useLanguage();
@@ -26,9 +40,7 @@ export default function Hero() {
             {t.eyebrow}
           </p>
 
-          <h1 className="text-4xl font-bold leading-tight sm:text-6xl">
-            Yu-Chien (Jason) Chen
-          </h1>
+          <h1 className="text-4xl font-bold leading-tight sm:text-6xl">{profile.fullName}</h1>
 
           <p className="mt-6 text-lg leading-8 text-neutral-600 sm:text-xl dark:text-neutral-300">
             {t.description}
@@ -54,24 +66,14 @@ export default function Hero() {
           </div>
 
           <div className="mt-10 flex flex-wrap gap-3 text-sm text-neutral-500 dark:text-neutral-400">
-            <span className="rounded-full border border-neutral-200 px-3 py-1 dark:border-neutral-800">
-              Next.js
-            </span>
-            <span className="rounded-full border border-neutral-200 px-3 py-1 dark:border-neutral-800">
-              React
-            </span>
-            <span className="rounded-full border border-neutral-200 px-3 py-1 dark:border-neutral-800">
-              ASP.NET Core
-            </span>
-            <span className="rounded-full border border-neutral-200 px-3 py-1 dark:border-neutral-800">
-              Angular
-            </span>
-            <span className="rounded-full border border-neutral-200 px-3 py-1 dark:border-neutral-800">
-              Azure DevOps
-            </span>
-            <span className="rounded-full border border-neutral-200 px-3 py-1 dark:border-neutral-800">
-              SQL Server
-            </span>
+            {HERO_TAGS.map((tag) => (
+              <span
+                key={tag}
+                className="rounded-full border border-neutral-200 px-3 py-1 dark:border-neutral-800"
+              >
+                {tag}
+              </span>
+            ))}
           </div>
 
           <GithubStats />

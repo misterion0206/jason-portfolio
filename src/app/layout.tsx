@@ -6,6 +6,7 @@ import LanguageProvider from "../components/LanguageProvider";
 import ChatWidget from "../components/ChatWidget";
 import { skillCategories } from "../data/skills";
 import { experiences } from "../data/experience";
+import { education, profile } from "../data/profile";
 import "./globals.css";
 
 const inter = Inter({
@@ -14,10 +15,10 @@ const inter = Inter({
   display: "swap",
 });
 
-const siteUrl = "https://www.jasonchen.website";
-const title = "Yu-Chien (Jason) Chen | Software Engineer";
+const siteUrl = profile.siteUrl;
+const title = `${profile.fullName} | ${profile.title}`;
 const description =
-  "Software engineer specializing in ASP.NET Core, Angular, Azure, and full-stack development with Next.js and React. Portfolio featuring enterprise ERP systems and a full-stack e-commerce platform.";
+  "Yu-Chien (Jason) Chen is a .NET full-stack software engineer with 3+ years of experience in C#, ASP.NET Core, Angular/React, SQL Server, and Azure. Portfolio featuring enterprise ERP work and a full-stack product creation and e-commerce platform.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -26,14 +27,24 @@ export const metadata: Metadata = {
   keywords: [
     "Yu-Chien Chen",
     "Jason Chen",
-    "Software Engineer",
+    ".NET Software Engineer",
+    ".NET Full-Stack Software Engineer",
+    "Application Developer",
     "Full-Stack Developer",
+    "Software Engineer II",
+    "Backend Engineer",
+    "Cloud Engineer",
+    "C#",
     "ASP.NET Core",
+    "Entity Framework Core",
+    "React",
     "Next.js",
     "Angular",
+    "SQL Server",
     "Azure",
+    "CI/CD",
   ],
-  authors: [{ name: "Yu-Chien (Jason) Chen" }],
+  authors: [{ name: profile.fullName }],
   robots: {
     index: true,
     follow: true,
@@ -43,7 +54,7 @@ export const metadata: Metadata = {
     url: siteUrl,
     title,
     description,
-    siteName: "Yu-Chien (Jason) Chen",
+    siteName: profile.fullName,
   },
   twitter: {
     card: "summary_large_image",
@@ -55,22 +66,32 @@ export const metadata: Metadata = {
 const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
-  name: "Yu-Chien (Jason) Chen",
+  name: profile.fullName,
   alternateName: "Jason Chen",
   url: siteUrl,
   image: `${siteUrl}/avatar-light.jpg`,
-  jobTitle: "Software Engineer",
-  email: "mailto:qaz12345tt99@gmail.com",
-  telephone: "+17342109691",
-  sameAs: ["https://github.com/misterion0206"],
+  jobTitle: profile.title,
+  description,
+  email: `mailto:${profile.email}`,
+  telephone: profile.phoneE164,
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Jersey City",
+    addressRegion: "NJ",
+    addressCountry: "US",
+  },
+  sameAs: [profile.githubUrl, profile.linkedinUrl],
   knowsAbout: Array.from(new Set(skillCategories.flatMap((category) => category.items))),
-  alumniOf: [
-    ...experiences.map((experience) => ({
-      "@type": "Organization" as const,
-      name: experience.company,
-    })),
-    { "@type": "CollegeOrUniversity" as const, name: "Stevens Institute of Technology" },
-  ],
+  // alumniOf is for schools only. Employers belong under workedFor/worksFor —
+  // putting them in alumniOf misrepresents them as educational institutions.
+  alumniOf: education.map((item) => ({
+    "@type": "CollegeOrUniversity" as const,
+    name: item.school,
+  })),
+  workedFor: experiences.map((experience) => ({
+    "@type": "Organization" as const,
+    name: experience.company,
+  })),
 };
 
 export default function RootLayout({

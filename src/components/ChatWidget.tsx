@@ -6,14 +6,18 @@ import { useLanguage } from "./LanguageProvider";
 import { uiText } from "../i18n/ui";
 import { RESUME_HREF } from "../data/resume";
 import { projects } from "../data/projects";
+import { profile } from "../data/profile";
 
 type Message = { role: "user" | "assistant"; content: string };
 
-const ecommerceProject = projects.find((p) => p.title === "Ecommerce Platform");
+// Match on the stable `id`, not the display title — the title is marketing copy
+// and renaming it used to silently break the demo links here.
+const ecommerceProject = projects.find((p) => p.id === "ecommerce-platform");
 
 const LINKS: Record<string, string | undefined> = {
   resume: RESUME_HREF,
-  github: "https://github.com/misterion0206",
+  github: profile.githubUrl,
+  linkedin: profile.linkedinUrl,
   live_demo: ecommerceProject?.demo,
   admin_demo: ecommerceProject?.adminDemo?.url,
 };

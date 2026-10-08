@@ -10,18 +10,18 @@ export const uiText = {
   en: {
     nav: { about: "About", skills: "Skills", experience: "Experience", projects: "Projects", contact: "Contact" },
     hero: {
-      eyebrow: "Software Engineer · Full-Stack · Cloud",
+      eyebrow: ".NET Full-Stack Software Engineer",
       description:
-        "I build scalable systems end to end — from enterprise backends with ASP.NET Core, Angular, SQL Server, and Azure DevOps, to full-stack products with Next.js and React. My focus is practical software that ships, scales, and improves how a business actually runs.",
+        "Full-stack software engineer with 3+ years of experience delivering enterprise and cloud applications with C#, ASP.NET Core, Angular/React, SQL Server, and Azure. I build production-ready web applications end to end, backed by CI/CD and end-to-end testing.",
       viewProjects: "View Projects",
       downloadResume: "Download Resume",
     },
     about: {
       eyebrow: "About",
       heading: "Professional Summary",
-      p1: "I am a software engineer with experience building enterprise systems, ERP features, internal portals, and cloud-based business applications. My background combines backend development, system integration, and practical delivery for real business environments.",
-      p2: "I previously worked on ASP.NET Core, Angular, SQL Server, and Azure DevOps projects, including procurement systems, ERP modernization, and internal information platforms. More recently, I've been building full-stack products end to end with Next.js and React on the frontend. I enjoy building maintainable systems that connect engineering execution with business value.",
-      p3: "I hold an M.S. in Computer Science from Stevens Institute of Technology, where I strengthened my skills in software engineering, web development, and data-driven applications.",
+      p1: "I am a .NET full-stack software engineer with 3+ years of professional experience building enterprise systems, ERP features, internal portals, and cloud-based business applications with C#, ASP.NET Core, SQL Server, and Azure.",
+      p2: "I led a five-person engineering team to deliver a procurement notification platform for Taipei 101, modernized an ERP application with Angular and ASP.NET Core, and deployed APS solutions for enterprise clients. More recently I have been building full-stack products end to end with Next.js and React, shipped through CI/CD pipelines with end-to-end testing.",
+      p3: "I hold an M.S. in Computer Science from Stevens Institute of Technology and a B.S. in Mathematics (Natural Sciences) from National Chung Cheng University.",
     },
     skills: { eyebrow: "Skills", heading: "Technical Stack" },
     experience: { eyebrow: "Experience", heading: "Professional Experience" },
@@ -45,11 +45,11 @@ export const uiText = {
       payments: "Payments",
       devops: "DevOps",
       features: [
-        "Canvas-based product customization studio",
-        "Shopping cart with Stripe checkout",
-        "Membership system",
-        "Operations admin dashboard",
-        "CI/CD pipelines with E2E testing and staged Azure/Vercel deployments",
+        "Konva/react-konva product customization studio with saved designs",
+        "Shopping cart, Stripe checkout, and order workflows",
+        "JWT authentication with refresh tokens and role-based authorization",
+        "Operations admin dashboard with per-user feature permissions",
+        "GitHub Actions CI/CD with Playwright end-to-end tests and gated staging/production deployments",
       ],
     },
     contact: {
@@ -57,6 +57,9 @@ export const uiText = {
       heading: "Let's Connect",
       description:
         "I am open to software engineering, backend, full-stack, and cloud-related opportunities. Feel free to reach out if you would like to connect, collaborate, or discuss a role.",
+      email: "Email",
+      phone: "Phone",
+      linkedin: "LinkedIn",
       github: "GitHub",
       resume: "Resume",
     },
@@ -81,18 +84,18 @@ export const uiText = {
   zh: {
     nav: { about: "關於我", skills: "技能", experience: "經歷", projects: "專案", contact: "聯絡" },
     hero: {
-      eyebrow: "軟體工程師 · 全端開發 · 雲端服務",
+      eyebrow: ".NET 全端軟體工程師",
       description:
-        "我打造從前端到後端完整的可擴展系統 — 從使用 ASP.NET Core、Angular、SQL Server 和 Azure DevOps 的企業級後端,到使用 Next.js 與 React 的全端產品。我專注於能實際上線、能擴展、並真正改善企業營運方式的實用軟體。",
+        "我是一名全端軟體工程師,擁有 3 年以上以 C#、ASP.NET Core、Angular/React、SQL Server 與 Azure 交付企業級與雲端應用程式的經驗。我負責端到端打造可上線的網頁應用,並以 CI/CD 與端對端測試支撐交付品質。",
       viewProjects: "查看專案",
       downloadResume: "下載履歷",
     },
     about: {
       eyebrow: "關於我",
       heading: "專業簡介",
-      p1: "我是一名軟體工程師,擁有建置企業系統、ERP 功能、內部入口網站與雲端商業應用程式的經驗。我的背景結合了後端開發、系統整合,以及在真實商業環境中的實務交付。",
-      p2: "我先前參與過 ASP.NET Core、Angular、SQL Server 與 Azure DevOps 相關專案,包括採購系統、ERP 現代化改造與內部資訊平台。近期我也開始使用 Next.js 與 React 打造完整的全端產品。我熱衷於打造能連結工程執行與商業價值的可維護系統。",
-      p3: "我畢業於史蒂文斯理工學院(Stevens Institute of Technology),取得資訊科學碩士學位,並在軟體工程、網頁開發與資料驅動應用程式方面持續累積實務能力。",
+      p1: "我是一名 .NET 全端軟體工程師,擁有 3 年以上專業經驗,以 C#、ASP.NET Core、SQL Server 與 Azure 建置企業系統、ERP 功能、內部入口網站與雲端商業應用程式。",
+      p2: "我曾帶領 5 人工程團隊為台北 101 交付採購通知平台,以 Angular 與 ASP.NET Core 現代化 ERP 應用程式,並為企業客戶部署 APS 解決方案。近期我以 Next.js 與 React 端到端打造全端產品,並透過 CI/CD 流水線與端對端測試進行交付。",
+      p3: "我取得史蒂文斯理工學院(Stevens Institute of Technology)資訊科學碩士學位,以及國立中正大學數學系(自然科學)學士學位。",
     },
     skills: { eyebrow: "技能", heading: "技術能力" },
     experience: { eyebrow: "經歷", heading: "工作經歷" },
@@ -116,11 +119,11 @@ export const uiText = {
       payments: "金流",
       devops: "DevOps",
       features: [
-        "以 Canvas 為基礎的商品客製化工作室",
-        "購物車與 Stripe 結帳",
-        "會員系統",
-        "營運後台管理面板",
-        "CI/CD 流水線,含端對端測試與 Azure/Vercel 分階段部署",
+        "以 Konva/react-konva 打造的商品客製化工作室,支援設計稿儲存",
+        "購物車、Stripe 結帳與訂單流程",
+        "JWT 驗證、refresh token 與角色權限控管",
+        "營運後台管理面板,支援個別使用者功能權限",
+        "GitHub Actions CI/CD,含 Playwright 端對端測試與測試/正式環境部署控管",
       ],
     },
     contact: {
@@ -128,6 +131,9 @@ export const uiText = {
       heading: "與我聯繫",
       description:
         "我對軟體工程、後端、全端與雲端相關的機會都保持開放態度。歡迎與我聯繫、合作,或聊聊職缺機會。",
+      email: "電子郵件",
+      phone: "電話",
+      linkedin: "LinkedIn",
       github: "GitHub",
       resume: "履歷",
     },
@@ -146,18 +152,18 @@ export const uiText = {
   es: {
     nav: { about: "Acerca de", skills: "Habilidades", experience: "Experiencia", projects: "Proyectos", contact: "Contacto" },
     hero: {
-      eyebrow: "Ingeniero de Software · Full-Stack · Cloud",
+      eyebrow: "Ingeniero de Software Full-Stack .NET",
       description:
-        "Construyo sistemas escalables de principio a fin — desde backends empresariales con ASP.NET Core, Angular, SQL Server y Azure DevOps, hasta productos full-stack con Next.js y React. Me enfoco en software práctico que se lanza, escala y mejora la forma en que realmente opera un negocio.",
+        "Ingeniero de software full-stack con más de 3 años de experiencia entregando aplicaciones empresariales y en la nube con C#, ASP.NET Core, Angular/React, SQL Server y Azure. Construyo aplicaciones web listas para producción de principio a fin, respaldadas por CI/CD y pruebas end-to-end.",
       viewProjects: "Ver Proyectos",
       downloadResume: "Descargar Currículum",
     },
     about: {
       eyebrow: "Acerca de",
       heading: "Resumen Profesional",
-      p1: "Soy un ingeniero de software con experiencia en la construcción de sistemas empresariales, funciones de ERP, portales internos y aplicaciones empresariales en la nube. Mi experiencia combina desarrollo backend, integración de sistemas y entrega práctica en entornos empresariales reales.",
-      p2: "Anteriormente trabajé en proyectos de ASP.NET Core, Angular, SQL Server y Azure DevOps, incluyendo sistemas de adquisiciones, modernización de ERP y plataformas de información internas. Más recientemente, he estado construyendo productos full-stack de principio a fin con Next.js y React en el frontend. Disfruto creando sistemas mantenibles que conectan la ejecución de ingeniería con el valor empresarial.",
-      p3: "Obtuve una Maestría en Ciencias de la Computación en Stevens Institute of Technology, donde fortalecí mis habilidades en ingeniería de software, desarrollo web y aplicaciones basadas en datos.",
+      p1: "Soy ingeniero de software full-stack .NET con más de 3 años de experiencia profesional construyendo sistemas empresariales, funciones de ERP, portales internos y aplicaciones de negocio en la nube con C#, ASP.NET Core, SQL Server y Azure.",
+      p2: "Lideré un equipo de cinco ingenieros para entregar una plataforma de notificación de adquisiciones para el Taipei 101, modernicé una aplicación ERP con Angular y ASP.NET Core, e implementé soluciones APS para clientes empresariales. Más recientemente he construido productos full-stack de principio a fin con Next.js y React, entregados mediante pipelines de CI/CD con pruebas end-to-end.",
+      p3: "Tengo una Maestría en Ciencias de la Computación por Stevens Institute of Technology y una Licenciatura en Matemáticas (Ciencias Naturales) por National Chung Cheng University.",
     },
     skills: { eyebrow: "Habilidades", heading: "Stack Técnico" },
     experience: { eyebrow: "Experiencia", heading: "Experiencia Profesional" },
@@ -181,11 +187,11 @@ export const uiText = {
       payments: "Pagos",
       devops: "DevOps",
       features: [
-        "Estudio de personalización de productos basado en canvas",
-        "Carrito de compras con pago mediante Stripe",
-        "Sistema de membresías",
-        "Panel de administración operativo",
-        "Pipelines de CI/CD con pruebas E2E e implementaciones escalonadas en Azure/Vercel",
+        "Estudio de personalización de productos con Konva/react-konva y diseños guardados",
+        "Carrito de compras, pago con Stripe y flujos de pedidos",
+        "Autenticación JWT con refresh tokens y autorización basada en roles",
+        "Panel de administración operativo con permisos por usuario",
+        "CI/CD con GitHub Actions, pruebas end-to-end con Playwright e implementaciones controladas de staging y producción",
       ],
     },
     contact: {
@@ -193,6 +199,9 @@ export const uiText = {
       heading: "Conectemos",
       description:
         "Estoy abierto a oportunidades de ingeniería de software, backend, full-stack y relacionadas con la nube. No dudes en contactarme si deseas conectar, colaborar o conversar sobre un puesto.",
+      email: "Correo",
+      phone: "Teléfono",
+      linkedin: "LinkedIn",
       github: "GitHub",
       resume: "Currículum",
     },

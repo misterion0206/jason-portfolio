@@ -8,11 +8,20 @@ import ThemeToggle from "./ThemeToggle";
 import Footer from "./Footer";
 import type { ProjectItem } from "../types";
 
-const TECH_GROUPS: Record<"frontend" | "backend" | "realtime" | "payments", string[]> = {
-  frontend: ["Next.js", "React"],
-  backend: ["ASP.NET Core", ".NET", "SQL Server", "Azure Blob Storage"],
+const TECH_GROUPS: Record<"frontend" | "backend" | "realtime" | "payments" | "devops", string[]> = {
+  frontend: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Konva/react-konva"],
+  backend: [
+    "ASP.NET Core",
+    ".NET",
+    "Entity Framework Core",
+    "SQL Server",
+    "Azure SQL",
+    "Azure Blob Storage",
+    "JWT",
+  ],
   realtime: ["SignalR"],
   payments: ["Stripe"],
+  devops: ["GitHub Actions", "Playwright", "Azure App Service", "Vercel"],
 };
 
 export default function ProjectDetail({ project }: { project: ProjectItem }) {
@@ -26,6 +35,7 @@ export default function ProjectDetail({ project }: { project: ProjectItem }) {
       ["backend", t.backend],
       ["realtime", t.realtime],
       ["payments", t.payments],
+      ["devops", t.devops],
     ] as const
   )
     .map(([key, label]) => ({

@@ -17,6 +17,8 @@ export type ExperienceItem = {
 };
 
 export type ProjectItem = {
+  /** Stable identifier used for lookups; `title` is display copy and may change. */
+  id: string;
   title: string;
   slug?: string;
   period: string;
@@ -24,6 +26,11 @@ export type ProjectItem = {
   tech: string[];
   github?: string;
   demo?: string;
+  /**
+   * Read-only admin demo. Intentionally public — these credentials gate a
+   * seeded staging account meant for recruiters/visitors to explore, not a
+   * secret. Confirmed non-sensitive by the project owner.
+   */
   adminDemo?: {
     url: string;
     username: string;

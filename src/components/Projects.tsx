@@ -53,7 +53,7 @@ export default function Projects() {
               ))}
             </div>
 
-            {(project.github || project.demo) && (
+            {(project.github || project.demo || project.adminDemo) && (
               <div className="mt-6 flex flex-wrap gap-4">
                 {project.github && (
                   <a
