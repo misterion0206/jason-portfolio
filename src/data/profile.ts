@@ -52,7 +52,7 @@ export const education: EducationItem[] = [
   {
     school: "National Chung Cheng University",
     location: "Chiayi, Taiwan",
-    degree: "B.S. in Mathematics",
+    degree: "B.S. in Mathematics (Natural Sciences)",
     graduation: "May 2019",
   },
 ];
