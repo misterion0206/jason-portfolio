@@ -64,9 +64,7 @@ export const projects: ProjectItem[] = [
   {
     id: "procurement-notification-system",
     title: "Procurement Notification System",
-    // Delivered during the Chenglin Innovation role; the exact sub-period within
-    // Nov 2022 - Aug 2024 is not recorded, so no invented date range here.
-    period: "Professional Project",
+    period: "Nov 2022 - Aug 2024",
     description: {
       en: "A procurement notification platform delivered for Taipei 101 with a five-person team, covering tender and bidding workflows, role-based menu access, status tracking, and API integrations with the client's internal systems.",
       zh: "與 5 人團隊為台北 101 交付的採購通知平台,涵蓋招標與投標流程、角色權限選單控管、狀態追蹤,以及與客戶內部系統的 API 整合。",
@@ -77,7 +75,7 @@ export const projects: ProjectItem[] = [
   {
     id: "enterprise-erp-modernization",
     title: "Enterprise ERP Modernization",
-    period: "Professional Project",
+    period: "Nov 2022 - Aug 2024",
     description: {
       en: "Modernization of a large ERP application with Angular, ASP.NET Core, and SQL Server, adding multilingual support and reducing page-load time by 25%.",
       zh: "以 Angular、ASP.NET Core 與 SQL Server 現代化大型 ERP 應用程式,加入多語系支援並將頁面載入時間縮短 25%。",

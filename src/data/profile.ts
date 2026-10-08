@@ -19,7 +19,7 @@ export const profile = {
   yearsOfExperience: "3+",
 
   // Contact — replace `email` here and every surface updates.
-  email: "qaz12345tt99@gmail.com",
+  email: "yuchien26.chen@gmail.com",
   phone: "+1 734-210-9691",
   phoneDisplay: "734-210-9691",
   phoneE164: "+17342109691",
