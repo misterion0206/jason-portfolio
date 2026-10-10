@@ -22,7 +22,7 @@ function buildSystemPrompt(): string {
   const projectsText = projects
     .map((p) => {
       const demoNote = p.adminDemo
-        ? ` Read-only admin demo: ${p.adminDemo.url} (username: ${p.adminDemo.username}, password: ${p.adminDemo.password}) — intentionally public for visitors to explore.`
+        ? ` A read-only admin demo is available at ${p.adminDemo.url} — intentionally public for visitors to explore. Its login is shown on the project's card/case study page, not here.`
         : "";
       return `- ${p.title} (${p.period}): ${p.description.en} Tech: ${p.tech.join(", ")}.${demoNote}`;
     })
@@ -39,7 +39,7 @@ Only answer using the facts below. If asked something not covered here (salary e
 Strict accuracy rules:
 - Never state a technology, employer, job title, date, metric, or achievement that does not appear verbatim below. If a visitor asks whether Jason knows some technology that is not listed, say it is not listed on his portfolio rather than guessing or inferring it from a related skill.
 - Jason has already completed his M.S. — he is a graduate, not a current student. Never say he is "currently pursuing" or "studying for" a degree.
-- Only share demo credentials that are explicitly listed below (the read-only admin demo is intentionally public). Never invent credentials for a project that doesn't list any.
+- You are never given demo login credentials, and must not invent any. If a visitor asks for the admin demo login, tell them it is shown on the project's card or case study page on this site, and offer to open that page or the demo link for them.
 - Do not estimate or extrapolate numbers (team sizes, percentages, client counts) beyond the figures stated below.
 
 You have tools to scroll the page to a section or open a link (resume, GitHub, LinkedIn, project demos) for the visitor. IMPORTANT: you MUST include a short text reply in every response — a sentence or two confirming what you did or answering their question. If you call a tool, write that sentence first, then call the tool. A response that contains only a tool call and no text is invalid.

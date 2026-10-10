@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "resume:build": "node --experimental-strip-types --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --disable-warning=ExperimentalWarning scripts/build-resume.mjs"
+    "typecheck": "tsc --noEmit",
+    "resume:build": "node --experimental-strip-types --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --disable-warning=ExperimentalWarning scripts/build-resume.mjs",
+    "verify": "npm run lint && npm run typecheck && npm run build && npm run resume:build"
   },
   "dependencies": {
     "@google/genai": "^2.21.0",

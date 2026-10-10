@@ -6,6 +6,8 @@ import { uiText } from "../i18n/ui";
 import LanguageToggle from "./LanguageToggle";
 import ThemeToggle from "./ThemeToggle";
 import Footer from "./Footer";
+import AdminDemoCredentials from "./AdminDemoCredentials";
+import ArchitectureDiagram from "./ArchitectureDiagram";
 import type { ProjectItem } from "../types";
 
 const TECH_GROUPS: Record<"frontend" | "backend" | "realtime" | "payments" | "devops", string[]> = {
@@ -79,16 +81,74 @@ export default function ProjectDetail({ project }: { project: ProjectItem }) {
           </p>
         </div>
 
-        <div className="mt-10">
-          <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600 dark:text-blue-400">
-            {t.keyFeatures}
-          </h2>
-          <ul className="mt-3 list-disc space-y-2 pl-5 leading-7 text-neutral-600 dark:text-neutral-300">
-            {t.features.map((feature) => (
-              <li key={feature}>{feature}</li>
-            ))}
-          </ul>
-        </div>
+        {project.caseStudy && (
+          <>
+            <div className="mt-10">
+              <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600 dark:text-blue-400">
+                {t.problem}
+              </h2>
+              <p className="mt-3 leading-8 text-neutral-600 dark:text-neutral-300">
+                {project.caseStudy.problem[locale]}
+              </p>
+            </div>
+
+            <div className="mt-10">
+              <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600 dark:text-blue-400">
+                {t.myRole}
+              </h2>
+              <p className="mt-3 leading-8 text-neutral-600 dark:text-neutral-300">
+                {project.caseStudy.myRole[locale]}
+              </p>
+            </div>
+
+            <div className="mt-10">
+              <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600 dark:text-blue-400">
+                {t.architecture}
+              </h2>
+              <div className="mt-3">
+                <ArchitectureDiagram />
+              </div>
+            </div>
+
+            <div className="mt-10">
+              <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600 dark:text-blue-400">
+                {t.keyDecisions}
+              </h2>
+              <ul className="mt-3 list-disc space-y-2 pl-5 leading-7 text-neutral-600 dark:text-neutral-300">
+                {project.caseStudy.decisions.map((decision) => (
+                  <li key={decision[locale]}>{decision[locale]}</li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="mt-10">
+              <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600 dark:text-blue-400">
+                {t.challenges}
+              </h2>
+              <p className="mt-3 leading-8 text-neutral-600 dark:text-neutral-300">
+                {project.caseStudy.challenges[locale]}
+              </p>
+            </div>
+
+            <div className="mt-10">
+              <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600 dark:text-blue-400">
+                {t.testingDeployment}
+              </h2>
+              <p className="mt-3 leading-8 text-neutral-600 dark:text-neutral-300">
+                {project.caseStudy.testing[locale]}
+              </p>
+            </div>
+
+            <div className="mt-10">
+              <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600 dark:text-blue-400">
+                {t.results}
+              </h2>
+              <p className="mt-3 leading-8 text-neutral-600 dark:text-neutral-300">
+                {project.caseStudy.results[locale]}
+              </p>
+            </div>
+          </>
+        )}
 
         <div className="mt-10">
           <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600 dark:text-blue-400">
@@ -154,12 +214,11 @@ export default function ProjectDetail({ project }: { project: ProjectItem }) {
         )}
 
         {project.adminDemo && (
-          <div className="mt-4 max-w-sm rounded-xl border border-neutral-300 bg-neutral-100 px-4 py-3 text-xs text-neutral-600 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-300">
-            <span className="font-semibold text-neutral-700 dark:text-neutral-200">
-              {pt.readOnlyDemo}
-            </span>{" "}
-            <code>{project.adminDemo.username}</code> / <code>{project.adminDemo.password}</code>
-          </div>
+          <AdminDemoCredentials
+            username={project.adminDemo.username}
+            password={project.adminDemo.password}
+            className="mt-4 max-w-sm"
+          />
         )}
       </article>
 
