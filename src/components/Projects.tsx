@@ -4,6 +4,7 @@ import Link from "next/link";
 import { projects } from "../data/projects";
 import { useLanguage } from "./LanguageProvider";
 import { uiText } from "../i18n/ui";
+import AdminDemoCredentials from "./AdminDemoCredentials";
 
 export default function Projects() {
   const { locale } = useLanguage();
@@ -43,7 +44,7 @@ export default function Projects() {
             </p>
 
             <div className="mt-5 flex flex-wrap gap-2">
-              {project.tech.map((tech) => (
+              {(project.highlightTech ?? project.tech).map((tech) => (
                 <span
                   key={tech}
                   className="rounded-full border border-neutral-300 px-3 py-1 text-sm text-neutral-600 dark:border-neutral-700 dark:text-neutral-300"
@@ -89,13 +90,11 @@ export default function Projects() {
             )}
 
             {project.adminDemo && (
-              <div className="mt-4 rounded-xl border border-neutral-300 bg-neutral-100 px-4 py-3 text-xs text-neutral-600 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-300">
-                <span className="font-semibold text-neutral-700 dark:text-neutral-200">
-                  {t.readOnlyDemo}
-                </span>{" "}
-                <code>{project.adminDemo.username}</code> /{" "}
-                <code>{project.adminDemo.password}</code>
-              </div>
+              <AdminDemoCredentials
+                username={project.adminDemo.username}
+                password={project.adminDemo.password}
+                className="mt-4"
+              />
             )}
           </div>
         ))}

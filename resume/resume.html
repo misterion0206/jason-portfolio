@@ -22,7 +22,7 @@
     <style>
       @page {
         size: letter;
-        margin: 0.42in 0.5in;
+        margin: 0.32in 0.5in;
       }
 
       * {
@@ -89,7 +89,7 @@
          tracked-out text, which makes extractors read "EDUCATION" as
          "E D U C AT I O N" and breaks ATS keyword matching. */
       h2 {
-        margin-top: 0.5rem;
+        margin-top: 0.36rem;
         padding-bottom: 0.06rem;
         border-bottom: 0.9pt solid #000;
         font-size: 1.05rem;
@@ -97,7 +97,7 @@
       }
 
       .entry {
-        margin-top: 0.3rem;
+        margin-top: 0.22rem;
       }
 
       /* Two text runs on one baseline: left label, right date. Flex keeps DOM
@@ -125,12 +125,12 @@
       }
 
       ul {
-        margin-top: 0.1rem;
+        margin-top: 0.06rem;
         padding-left: 1.05rem;
       }
 
       li {
-        margin-top: 0.09rem;
+        margin-top: 0.05rem;
       }
 
       /* ---------- Skills ---------- */
@@ -167,28 +167,6 @@
       <p class="summary">{{summary}}</p>
     </header>
 
-    <h2>EDUCATION</h2>
-
-    <div class="entry">
-      <div class="row">
-        <div>
-          <span class="org">Stevens Institute of Technology</span>, Hoboken, NJ - M.S. in
-          Computer Science
-        </div>
-        <div class="date">May 2026</div>
-      </div>
-    </div>
-
-    <div class="entry">
-      <div class="row">
-        <div>
-          <span class="org">National Chung Cheng University</span>, Chiayi, Taiwan - B.S. in
-          Mathematics (Natural Sciences)
-        </div>
-        <div class="date">May 2019</div>
-      </div>
-    </div>
-
     <h2>PROFESSIONAL EXPERIENCE</h2>
 
     <div class="entry">
@@ -200,7 +178,8 @@
       <ul>
         <li>
           Led a five-person engineering team to deliver a procurement notification platform for
-          Taipei 101 in two months using ASP.NET Core MVC and SQL Server, improving cross-team
+          Taipei 101 in two months using ASP.NET Core MVC and SQL Server, giving users and managers
+          instant status updates through a shared message board and improving cross-team
           communication efficiency by 30%.
         </li>
         <li>
@@ -211,7 +190,11 @@
           Modernized an ERP application using Angular, ASP.NET Core, and SQL Server, adding
           multilingual support and reducing page-load time by 25%.
         </li>
-        <li>Built a corporate information portal for project, cost, and revenue tracking.</li>
+        <li>
+          Built a corporate information portal using ASP.NET Core and SQL Server that gave
+          leadership a single, real-time view of project status, cost, and revenue across the
+          organization.
+        </li>
         <li>Introduced Azure DevOps CI/CD pipelines, reducing release-cycle time by 40%.</li>
       </ul>
     </div>
@@ -224,20 +207,20 @@
       <div class="role">Technical R&amp;D Engineer</div>
       <ul>
         <li>
-          Built multilingual import/export modules using C#, WinForms, and SQL, supporting more than
-          five languages and improving operational efficiency by 40%.
+          Built multilingual import/export modules using C#, WinForms, and SQL, supporting 5+
+          languages and improving operational efficiency by 40%.
         </li>
         <li>
-          Delivered more than ten customized workflow, validation, reporting, and import features
-          using DevExpress and NPOI.
+          Delivered 10+ customized workflow, validation, reporting, and import features using
+          DevExpress and NPOI.
         </li>
         <li>
-          Deployed APS solutions for more than five enterprise clients and supported customized
-          requirements and integrations for more than fifteen clients.
+          Deployed APS solutions for 5+ enterprise clients and supported customized requirements and
+          integrations for 15+ clients.
         </li>
         <li>
-          Collaborated with a cross-regional team of more than ten members and presented technical
-          solutions to executive stakeholders.
+          Collaborated with a cross-regional team of 10+ members and presented technical solutions to
+          executive stakeholders.
         </li>
       </ul>
     </div>
@@ -263,6 +246,12 @@
           Automated delivery with GitHub Actions CI/CD and Playwright end-to-end tests, deploying
           through staging and production controls to Azure App Service and Vercel.
         </li>
+        <li>
+          Case Study:
+          <a href="{{siteUrl}}/projects/ecommerce-platform"
+            >{{siteDisplay}}/projects/ecommerce-platform</a
+          >
+        </li>
       </ul>
     </div>
 
@@ -284,7 +273,32 @@
           Protected the public chat endpoint with same-origin validation and Upstash Redis
           sliding-window rate limiting.
         </li>
+        <li>
+          GitHub: <a href="{{githubUrl}}">{{githubDisplay}}</a>
+        </li>
       </ul>
+    </div>
+
+    <h2>EDUCATION</h2>
+
+    <div class="entry">
+      <div class="row">
+        <div>
+          <span class="org">Stevens Institute of Technology</span>, Hoboken, NJ - M.S. in
+          Computer Science
+        </div>
+        <div class="date">May 2026</div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="row">
+        <div>
+          <span class="org">National Chung Cheng University</span>, Chiayi, Taiwan - B.S. in
+          Mathematics (Natural Sciences)
+        </div>
+        <div class="date">May 2019</div>
+      </div>
     </div>
 
     <h2>TECHNICAL SKILLS</h2>
@@ -309,7 +323,7 @@
         NPOI
       </p>
       <p>
-        <span class="label">Integrations:</span> Stripe, Google Gemini API, function calling
+        <span class="label">Integrations:</span> Stripe, Google Gemini API, Function Calling
       </p>
     </div>
   </body>

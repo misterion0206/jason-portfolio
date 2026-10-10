@@ -1,0 +1,30 @@
+name: PR checks
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - run: npm run lint
+
+      - run: npx tsc --noEmit
+
+      - run: npm run build
+
+      # ubuntu-latest ships Google Chrome preinstalled, which
+      # scripts/build-resume.mjs auto-detects. If GitHub ever drops it from
+      # the runner image, add a `browser-actions/setup-chrome` step above and
+      # export CHROME_PATH before this step.
+      - run: npm run resume:build

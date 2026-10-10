@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import GithubStats from "./GithubStats";
+import CareerStats from "./CareerStats";
 import Avatar from "./Avatar";
 import { useLanguage } from "./LanguageProvider";
 import { uiText } from "../i18n/ui";
@@ -31,7 +31,7 @@ export default function Hero() {
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="flex max-w-4xl flex-col items-start gap-8 sm:flex-row sm:items-center"
+        className="flex max-w-5xl flex-col items-start gap-8 sm:flex-row sm:items-center"
       >
         <Avatar />
 
@@ -40,7 +40,9 @@ export default function Hero() {
             {t.eyebrow}
           </p>
 
-          <h1 className="text-4xl font-bold leading-tight sm:text-6xl">{profile.fullName}</h1>
+          <h1 className="text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">
+            {profile.fullName}
+          </h1>
 
           <p className="mt-6 text-lg leading-8 text-neutral-600 sm:text-xl dark:text-neutral-300">
             {t.description}
@@ -76,7 +78,7 @@ export default function Hero() {
             ))}
           </div>
 
-          <GithubStats />
+          <CareerStats />
         </div>
       </motion.div>
     </section>

@@ -49,6 +49,6 @@ export const skillCategories: SkillCategory[] = [
   },
   {
     title: { en: "Integrations", zh: "整合服務", es: "Integraciones" },
-    items: ["Stripe", "Google Gemini API", "Function calling"],
+    items: ["Stripe", "Google Gemini API", "Function Calling"],
   },
 ];
