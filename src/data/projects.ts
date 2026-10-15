@@ -126,12 +126,12 @@ export const projects: ProjectItem[] = [
   },
   {
     id: "enterprise-systems-chenglin",
-    title: "Enterprise Procurement & ERP Modernization",
+    title: "Enterprise Procurement & ERP Systems",
     period: "Nov 2022 - Aug 2024",
     description: {
-      en: "Two enterprise systems delivered for Chenglin Innovation: a procurement notification platform for Taipei 101 built with a five-person team in two months, and an Angular/ASP.NET Core ERP modernization that added multilingual support and cut page-load time by 25%.",
-      zh: "為 Chenglin Innovation 交付的兩套企業系統:與 5 人團隊在 2 個月內完成的台北 101 採購通知平台，以及以 Angular、ASP.NET Core 現代化 ERP、加入多語系支援並將頁面載入時間縮短 25%。",
-      es: "Dos sistemas empresariales entregados para Chenglin Innovation: una plataforma de notificación de adquisiciones para el Taipei 101 construida con un equipo de cinco personas en dos meses, y una modernización de ERP con Angular/ASP.NET Core que añadió soporte multilingüe y redujo el tiempo de carga de página en un 25%.",
+      en: "Two enterprise systems built at Chenglin Innovation: the notification system and message board for Taipei 101's procurement portal, delivered by a five-person team in two months, and multilingual support for a client's Angular/ASP.NET Core ERP system.",
+      zh: "在 Chenglin Innovation 完成的兩套企業系統：5 人團隊在 2 個月內交付的台北 101 採購平台通知系統與留言板，以及為客戶的 Angular/ASP.NET Core ERP 系統加入多語系支援。",
+      es: "Dos sistemas empresariales construidos en Chenglin Innovation: el sistema de notificaciones y el tablón de mensajes del portal de compras del Taipei 101, entregado por un equipo de cinco personas en dos meses, y el soporte multilingüe para el sistema ERP de un cliente en Angular/ASP.NET Core.",
     },
     tech: ["ASP.NET Core MVC", "Angular", "SQL Server", "Azure DevOps"],
   },
