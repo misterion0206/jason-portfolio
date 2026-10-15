@@ -65,7 +65,7 @@ export const graduateDegree = education[0];
  * Kept in one place so the PDF and the AI assistant can never drift apart.
  */
 export const professionalSummary =
-  "Full-stack software engineer with 3+ years of experience delivering enterprise and cloud applications with C#, ASP.NET Core, Angular/React, SQL Server, and Azure. Led a five-person engineering team, deployed ERP/APS solutions for enterprise clients, and built production-ready web applications with CI/CD and end-to-end testing.";
+  "Full-stack .NET engineer with 3+ years of experience building ERP features, production scheduling (APS) software, and internal web systems in C#, ASP.NET Core, Angular, and SQL Server. Led a five-person team on Taipei 101's procurement portal and rolled out APS software for 5+ clients. Recently built an e-commerce platform with Next.js, ASP.NET Core, and Azure, tested with Playwright and deployed through CI/CD.";
 
 export const contactLinks = {
   email: `mailto:${profile.email}`,

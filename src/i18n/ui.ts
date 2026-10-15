@@ -12,7 +12,7 @@ export const uiText = {
     hero: {
       eyebrow: ".NET Full-Stack Software Engineer",
       description:
-        "Full-stack software engineer with 3+ years of experience delivering enterprise and cloud applications with C#, ASP.NET Core, Angular/React, SQL Server, and Azure. I build production-ready web applications end to end, backed by CI/CD and end-to-end testing.",
+        "I spent three years in Taiwan building ERP features, production scheduling (APS) software, and internal web systems in C#, ASP.NET Core, Angular, and SQL Server. Lately I've been building full-stack apps with Next.js and React on ASP.NET Core APIs.",
       viewProjects: "View Projects",
       downloadResume: "Download Resume",
       statsYears: "Years Experience",
@@ -22,8 +22,8 @@ export const uiText = {
     about: {
       eyebrow: "About",
       heading: "Professional Summary",
-      p1: "Across both of my engineering roles, I've owned delivery end to end — leading the five-person team that built the Taipei 101 procurement platform, and serving as the technical point of contact who presented solutions directly to executive stakeholders at Digihua's clients.",
-      p2: "That ownership has spanned real enterprise workflows: procurement and ERP systems, multilingual import/export tooling, and APS deployments customized for 5+ clients with their own data integration needs — plus, more recently, building full-stack products end to end with Next.js and React.",
+      p1: "My first engineering job was at Digihua, an ERP vendor in Taiwan. I wrote C# WinForms features for its ERP and APS (production scheduling) products and rolled the APS system out to 5+ clients.",
+      p2: "At Chenglin Innovation I moved to web development with ASP.NET Core, Angular, and SQL Server. I led the five-person team that built the notification system for Taipei 101's procurement portal and introduced CI/CD pipelines in Azure DevOps. Since then I've been building full-stack projects with Next.js and React on ASP.NET Core APIs.",
       p3: "I hold an M.S. in Computer Science from Stevens Institute of Technology and a B.S. in Mathematics (Natural Sciences) from National Chung Cheng University.",
     },
     skills: { eyebrow: "Skills", heading: "Technical Stack" },
@@ -59,7 +59,7 @@ export const uiText = {
       eyebrow: "Contact",
       heading: "Let's Connect",
       description:
-        "I'm looking for .NET Software Engineer, Application Developer, and Full-Stack Engineer roles in Jersey City / NYC or remote within the U.S. Feel free to reach out if you'd like to connect, collaborate, or discuss an opening.",
+        "I'm looking for .NET Software Engineer, Application Developer, and Full-Stack Engineer roles in Jersey City / NYC or remote within the U.S. Email is the fastest way to reach me.",
       email: "Email",
       phone: "Phone",
       linkedin: "LinkedIn",
@@ -89,7 +89,7 @@ export const uiText = {
     hero: {
       eyebrow: ".NET 全端軟體工程師",
       description:
-        "我是一名全端軟體工程師，擁有 3 年以上以 C#、ASP.NET Core、Angular/React、SQL Server 與 Azure 交付企業級與雲端應用程式的經驗。我負責端到端打造可上線的網頁應用，並以 CI/CD 與端對端測試支撐交付品質。",
+        "我在台灣做了三年的 ERP 功能、生產排程（APS）軟體與內部網頁系統，主要使用 C#、ASP.NET Core、Angular 與 SQL Server。最近則以 Next.js 與 React 搭配 ASP.NET Core API 開發全端應用。",
       viewProjects: "查看專案",
       downloadResume: "下載履歷",
       statsYears: "年經驗",
@@ -99,8 +99,8 @@ export const uiText = {
     about: {
       eyebrow: "關於我",
       heading: "專業簡介",
-      p1: "我在兩份工程職務中都負責端到端的專案交付——帶領 5 人團隊打造台北 101 採購平台，並在 Digihua 擔任技術窗口，直接向客戶端的高階主管簡報解決方案。",
-      p2: "這些專案涵蓋了真實的企業工作流程：採購與 ERP 系統、多語系匯入/匯出工具，以及為 5 家以上客戶量身打造、各自有不同資料整合需求的 APS 部署；近期則延伸到以 Next.js 與 React 端到端打造全端產品。",
+      p1: "我的第一份工程師工作在台灣的 ERP 廠商 Digihua，負責以 C# WinForms 開發 ERP 與 APS（生產排程）產品的功能，並為 5 家以上客戶導入 APS 系統。",
+      p2: "之後在 Chenglin Innovation 轉做網頁開發，使用 ASP.NET Core、Angular 與 SQL Server。我帶領 5 人團隊完成台北 101 採購平台的通知系統，也在 Azure DevOps 導入了 CI/CD 流水線。近期則以 Next.js 與 React 搭配 ASP.NET Core API 開發全端專案。",
       p3: "我取得史蒂文斯理工學院(Stevens Institute of Technology)電腦科學碩士學位，以及國立中正大學數學系(自然科學)學士學位。",
     },
     skills: { eyebrow: "技能", heading: "技術能力" },
@@ -136,7 +136,7 @@ export const uiText = {
       eyebrow: "聯絡",
       heading: "與我聯繫",
       description:
-        "我正在尋找 .NET 軟體工程師、Application Developer 與全端工程師相關職缺，地點以紐澤西 Jersey City、紐約都會區或美國境內遠端為主。歡迎與我聯繫、合作，或聊聊職缺機會。",
+        "我正在尋找 .NET 軟體工程師、Application Developer 與全端工程師相關職缺，地點以紐澤西 Jersey City、紐約都會區或美國境內遠端為主。最快的聯絡方式是 Email。",
       email: "電子郵件",
       phone: "電話",
       linkedin: "LinkedIn",
@@ -160,7 +160,7 @@ export const uiText = {
     hero: {
       eyebrow: "Ingeniero de Software Full-Stack .NET",
       description:
-        "Ingeniero de software full-stack con más de 3 años de experiencia entregando aplicaciones empresariales y en la nube con C#, ASP.NET Core, Angular/React, SQL Server y Azure. Construyo aplicaciones web listas para producción de principio a fin, respaldadas por CI/CD y pruebas end-to-end.",
+        "Pasé tres años en Taiwán desarrollando funciones de ERP, software de planificación de producción (APS) y sistemas web internos con C#, ASP.NET Core, Angular y SQL Server. Últimamente desarrollo aplicaciones full-stack con Next.js y React sobre APIs de ASP.NET Core.",
       viewProjects: "Ver Proyectos",
       downloadResume: "Descargar Currículum",
       statsYears: "Años de Experiencia",
@@ -170,8 +170,8 @@ export const uiText = {
     about: {
       eyebrow: "Acerca de",
       heading: "Resumen Profesional",
-      p1: "En mis dos puestos de ingeniería he asumido la entrega de principio a fin: lideré el equipo de cinco personas que construyó la plataforma de adquisiciones del Taipei 101, y fui el punto de contacto técnico que presentó soluciones directamente a los directivos de los clientes de Digihua.",
-      p2: "Esa responsabilidad ha abarcado flujos de trabajo empresariales reales: sistemas de adquisiciones y ERP, herramientas multilingües de importación/exportación, y despliegues de APS personalizados para más de 5 clientes con sus propias necesidades de integración de datos; más recientemente, construyendo productos full-stack de principio a fin con Next.js y React.",
+      p1: "Mi primer trabajo como ingeniero fue en Digihua, un proveedor de ERP en Taiwán. Desarrollé funciones en C# WinForms para sus productos ERP y APS (planificación de producción) e implanté el sistema APS en más de cinco clientes.",
+      p2: "En Chenglin Innovation pasé al desarrollo web con ASP.NET Core, Angular y SQL Server. Lideré el equipo de cinco personas que construyó el sistema de notificaciones del portal de compras del Taipei 101 e introduje pipelines de CI/CD en Azure DevOps. Desde entonces desarrollo proyectos full-stack con Next.js y React sobre APIs de ASP.NET Core.",
       p3: "Tengo una Maestría en Ciencias de la Computación por Stevens Institute of Technology y una Licenciatura en Matemáticas (Ciencias Naturales) por National Chung Cheng University.",
     },
     skills: { eyebrow: "Habilidades", heading: "Stack Técnico" },
@@ -207,7 +207,7 @@ export const uiText = {
       eyebrow: "Contacto",
       heading: "Conectemos",
       description:
-        "Estoy buscando puestos de .NET Software Engineer, Application Developer e Ingeniero Full-Stack en Jersey City / NYC o en remoto dentro de EE. UU. No dudes en contactarme si deseas conectar, colaborar o conversar sobre un puesto.",
+        "Estoy buscando puestos de .NET Software Engineer, Application Developer e Ingeniero Full-Stack en Jersey City / NYC o en remoto dentro de EE. UU. El correo electrónico es la forma más rápida de contactarme.",
       email: "Correo",
       phone: "Teléfono",
       linkedin: "LinkedIn",
